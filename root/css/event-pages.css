@@ -1,0 +1,110 @@
+/* Common CSS */
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body{
+	display: grid;
+	font-family: "Arial", sans-serif;
+	grid-template-columns: repeat(12, 1fr);
+	background-image: url("../img/background.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Arial';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 29px;
+}
+
+header{
+	grid-column: 1/13;
+	width: 100%;
+	background-color: #AAE0FF;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.logo{
+	padding: 0 0 0 20px;
+	width: 250px;
+	height:auto;
+	grid-column: 2/3;
+}
+
+.listcontainer{
+	grid-column: 8/12;
+	width: 100%;
+	padding: 0 20px 0 0;
+}
+
+.headerList{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+}
+.button1{
+	background-color: #FDDF42;
+	border-radius: 15px;
+	width: 150px;
+	height: 60px;
+}
+.button1 button{
+	background-color: #FDDF42;
+	border-radius: 15px;
+	border: none;
+	width: 150px;
+	height: 60px;
+	font-size: 20px;
+	font-family: Arial, serif;
+}
+.button2{
+	background-color: #198DCE;
+	border-radius: 15px;
+	width: 150px;
+	height: 60px;
+}
+.button2 button{
+	background-color: #198DCE;
+	border-radius: 15px;
+	border: none;
+	color: #ffffff;
+	width: 150px;
+	height: 60px;
+	font-size: 20px;
+	font-family: Arial, serif;
+}
+.button1 :hover{
+	background-color: #705E00;
+	color: #ffffff;
+}
+.button2 :hover{
+	background-color: #C5EAFF;
+	color: #000000;
+	border: black 1px solid;
+}
+
+
+/* Events */
+
+main {
+	background-color: rgba(39, 82, 100, 0.6);
+	border-radius: 15px;
+	color: #ffffff;
+	grid-column: 2/12;
+	margin: 5%;
+	padding: 5%;
+}
+
+img {
+	width: 100%;
+}
+
+p {
+	margin: 50px;
+}
