@@ -41,38 +41,34 @@
 </header>
 
 	<?php
-	
-	
-		function table_function($sql, $line="\n") {
-			$htmltable =  "<table>" . $line; 
-			$counter   = 0;
-			while( $row = $sql->fetch_assoc()  ){
-				if ( $counter===0 ) {
-					$htmltable .=   "<tr>"  . $line;
-					foreach ($row as $key => $value ) {
-						$htmltable .=   "<th>" . $key . "</th>"  . $line;
-					}
-					$htmltable .=   "</tr>"  . $line; 
-					$counter = 8;
-				}
-				$htmltable .=   "<tr>"  . $line;
-				foreach ($row as $key => $value ) {
-					$htmltable .=   "<td>" . $value . "</td>"  . $line;
-				}
-				$htmltable .=   "</tr>"   . $line;
-			}
-			$htmltable .=   "</table>"   . $line; 
-			return( $htmltable ); 
-			}
-
-		
+		$dbHandler = null;
 		try{
 			$dbHandler = new PDO("mysql:host=mysql;dbname=test;charset=utf8", "root", "qwerty");
-			$sql = $dbHandler->query( "SELECT * FROM parent_scores LIMIT 1 ;" ); 
-			echo table_function( $sql, $line="\n" ); 
 		}catch(Exception $ex){
 			echo $ex;
 		}
+		
+		if($dbHandler){
+			try{
+				$sql = $dbHandler->prepare( "SELECT * FROM parent_scores;" ); 
+				$sql->execute();				
+			}catch(Exception $ex){
+				echo $ex;
+			}
+			
+			if($sql->rowCount() > 0){
+				while($result = $sql->fetch(PDO::FETCH_ASSOC)){
+					var_dump($result);
+					
+				}
+			
+			}
+			else{
+				echo "count went wrong";
+			}
+			
+		}
+		
 
 	?>
 
