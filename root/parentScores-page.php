@@ -40,37 +40,36 @@
 
 </header>
 
-	<?php
-		$dbHandler = null;
-		try{
-			$dbHandler = new PDO("mysql:host=mysql;dbname=test;charset=utf8", "root", "qwerty");
-		}catch(Exception $ex){
-			echo $ex;
-		}
-		
-		if($dbHandler){
-			try{
-				$sql = $dbHandler->prepare( "SELECT * FROM parent_scores;" ); 
-				$sql->execute();				
-			}catch(Exception $ex){
-				echo $ex;
-			}
-			
-			if($sql->rowCount() > 0){
-				while($result = $sql->fetch(PDO::FETCH_ASSOC)){
-					var_dump($result);
-					
-				}
-			
-			}
-			else{
-				echo "count went wrong";
-			}
-			
-		}
-		
+  <main>
+        <table class="table">
+          <tr>
+            <th>Course</th>
+            <th>Score</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>fvgbhnjmk</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
 
-	?>
+    </main>
 
 </body>
 </html>
