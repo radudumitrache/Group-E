@@ -40,36 +40,57 @@
 
 </header>
 
-  <main>
-        <table class="table">
-          <tr>
-            <th>Course</th>
-            <th>Score</th>
-            <th>Notes</th>
-          </tr>
-          <tr>
-            <td>fvgbhnjmk</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-    </main>
+<main>
+		
+    <table class="table">
+      <tr>
+        <th>Course</th>
+        <th>Score</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>fvgbhnjmk</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>yo</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>aye</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>bruh</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>blah</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ue</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>eh</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>man</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  
+</main>
 
 </body>
 </html>
