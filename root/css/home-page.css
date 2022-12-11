@@ -132,8 +132,9 @@ main
   box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
   padding: 15px 13px 15px 13px;
   border-radius: 10px;
+  overflow: hidden;
 }
-.InfoBox > p
+.InfoBox p
 {
   font-family: 'Arial';
   font-style: normal;
@@ -144,9 +145,19 @@ main
   text-align: center;
   margin-top: 30px;
 }
-.InfoBox > img
+.InfoBox img
 {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.InfoBox a
+{
+  z-index: 1;
+}
+.InfoBox .overlay
+{
+  position:absolute;
+  
+  
 }
