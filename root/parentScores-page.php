@@ -40,8 +40,8 @@
 
 </header>
 
-	<main>
-		<div class="MainBox">
+<main>
+		<div class="MainBox"> <!-- This box contains everything above the table -->
 			<div class="AboveContent">
 				<a class="button1" href="parentProfile.php">
           			<button>Profile</button>
@@ -53,12 +53,12 @@
 					alt="Image of a Student"
 				>
 			</div>
-			<div class="TableAlign">
-				<table class="Table">
+			<div class="TableAlign"> <!-- This class is in order for me to align the table in the center -->
+				<table class="Table"> <!-- Table of scores -->
 					<tr>
 						<th>Course</th>
 						<th>Score</th>
-						<th id="NotesTh">Notes</th>
+						<th id="NotesTh">Notes</th> <!-- The ids/classes in the th and tds are added for proper borders styling -->
 					</tr>
 					<tr>
 						<td class="RightTds">fvgbhnjmk</td>
