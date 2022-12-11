@@ -78,3 +78,40 @@ header{
   color: #000000;
   border: black 1px solid;
 }
+main
+{
+  grid-column: 1/13;
+}
+#imageBanner
+{
+  
+  margin:auto;
+  margin-top: 0.5%;
+  width: 95%;
+  border-radius: 10px;
+  background-image: url("../img/MorgensterNaambord1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 145px 968px 42.46px 84px;
+
+}
+#textBox
+{
+  background-color: rgba(91, 154, 189, 0.58);
+  width: 343px;
+  height: 354px;
+  content: ""; 
+  border-radius: 15px;
+  padding: 49px 39px 38px 39px;
+  
+}
+
+#textBox > p
+{
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 127.99%;
+  color:white;
+}
