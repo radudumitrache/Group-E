@@ -50,13 +50,26 @@
     </ul>
 
   </div>
-
 </header>
-
-
-
-
-
-
+  <main>
+    <div id="formContainer">
+    <form action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">
+      <h1>Reset Password</h1>
+      <label for="email">Enter your E-mail </label>
+      <input type="text" id="email" name="email">
+      <label for="code">Enter the code</label>
+      <input type="text" id="code" name="code">
+      <input type="submit" id="submit" name="sendCode" value="Send code">
+    </form>
+    <form action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">
+      
+      <label for="newPass">New Password</label>
+      <input type="text" id="newPass" name="newPassword">
+      <div id="buttonContainer">
+        <input type="submit" id="submit" name="submit" value="Submit">
+      </div>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
