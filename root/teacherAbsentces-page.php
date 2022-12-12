@@ -47,6 +47,56 @@
         <img src="img/teacherImg.svg" title="teacherImg" alt="teacherImg">
       </div>
 
+      <div class="MainBox">
+        <table class="table">
+            <tr>
+              <th>Students</th>
+              <th>Date</th>
+              <th id="NotesTh">Notes</th>
+            </tr>
+            <tr>
+              <td class="RightTds">1</td>
+              <td></td>
+              <td class="LeftTds"></td>
+            </tr>
+            <tr>
+              <td class="RightTds">2</td>
+              <td></td>
+              <td class="LeftTds"></td>
+            </tr>
+            <tr>
+              <td class="RightTds">3</td>
+              <td></td>
+              <td class="LeftTds"></td>
+            </tr>
+            <tr>
+              <td class="RightTds">4</td>
+              <td></td>
+              <td class="LeftTds"></td>
+            </tr>
+            <tr>
+              <td class="RightTds">5</td>
+              <td></td>
+            <td class="LeftTds"></td>
+            </tr>
+            <tr>
+              <td class="RightTds">6</td>
+              <td></td>
+              <td class="LeftTds"></td>
+            </tr>
+            <tr>
+              <td class="RightTds">7</td>
+              <td></td>
+              <td class="LeftTds"></td>
+            </tr>
+            <tr>
+              <td class="RightTds" id="BottomRow">8</td>
+              <td id="BottomRow"></td>
+              <td class="LeftTds" id="BottomRow"></td>
+            </tr>
+        </table>
+      </div>
+
     </main>
 
   </div>
