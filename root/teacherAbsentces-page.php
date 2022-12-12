@@ -39,6 +39,16 @@
 
     </header>
 
+    <main>
+
+      <div id="mainContent">
+        <div class="button1" href="home-page.php"><button>Profile</button></div>
+        <h1 class="textSettings">Absences</h1>
+        <img src="img/teacherImg.svg" title="teacherImg" alt="teacherImg">
+      </div>
+
+    </main>
+
   </div>
 
 </body>
