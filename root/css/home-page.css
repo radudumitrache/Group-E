@@ -124,40 +124,48 @@ main
   margin-bottom: 33px;
 }
 
-.InfoBox
+#InfoBanner a
 {
-  width: 355px;
+  width:355px;
   height: 263px;
-  background-color: #198DCE;
+  background: #198DCE;
   box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
-  padding: 15px 13px 15px 13px;
   border-radius: 10px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Arial', serif;
+  font-size: 15px;
 }
 .InfoBox p
 {
   font-family: 'Arial';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 29px;
-  color:white;
-  text-align: center;
-  margin-top: 30px;
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 29px;
+margin-top: 30px;
 }
-.InfoBox img
+.InfoBox
 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.overlay
+{
+  display:none;
+}
+#InfoBanner a:hover{
+  background: rgba(39, 82, 100, 1);
+  backdrop-filter: blur(5px);
+}
+#InfoBanner a:hover .InfoBox{
+  display: none;
+}
+#InfoBanner a:hover .overlay{
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.InfoBox a
-{
-  z-index: 1;
-}
-.InfoBox .overlay
-{
-  position:absolute;
-  
-  
 }
