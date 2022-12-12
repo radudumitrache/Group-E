@@ -55,3 +55,36 @@ header{
   background-color: #705E00;
   color: #ffffff;
 }
+
+main{
+  color: white;
+  grid-column: 3/11;
+  background-color: rgba(39, 82, 100, 0.6);
+  backdrop-filter: blur(7.5px);
+  height: 650px;
+  margin-top: 50px;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#mainContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.textSettings{
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+}
+
+main > div > a{
+  color: white;
+  text-decoration-style: dashed;
+}
