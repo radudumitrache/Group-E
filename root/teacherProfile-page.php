@@ -18,32 +18,29 @@
 
 <body>
 
-<header>
+  <div id="container">
+    
+    <header>
 
-  <a class="logo" href="home-page.php">
-    <img src="img/logo.svg" alt="logo">
-  </a>
-
-  <div class="listcontainer">
-
-    <ul class="headerList">
-
-      <li>
-        <a class="button1" href="home-page.php">
-          <button>Sign out</button>
+      <div>
+        <a class="logo" href="home-page.php">
+          <img src="img/logo.svg" alt="logo">
         </a>
-      </li>
+      </div>
 
-    </ul>
+      <div class="listContainer">
+        <ul class="headerList">
+          <li>
+            <a class="button1" href="home-page.php">
+              <button>SignOut</button>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </header>
 
   </div>
-
-</header>
-
-
-
-
-
 
 </body>
 </html>
