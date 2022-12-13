@@ -45,7 +45,25 @@
   </div>
 
 </header>
-
+<div class="contentL">
+  <p class="about">About Us</p>
+  <div class="content">
+    <p>Location</p>
+    <img id="map"src="img/map.png" alt="map">
+    <p>Contact Us</p>
+    <li class="listll">
+      <ul>
+        Tel: 01234567
+      </ul>
+      <ul>
+        E-mail: example@gmail.com
+      </ul>
+    </li>
+  </div>
+    
+  <a class="teambutton"href="aboutUs-page.php">About our team</a>
+  <a class="timebutton"href="schoolTime-page.php">School time</a>
+</div>
 
 
 

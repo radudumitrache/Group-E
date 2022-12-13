@@ -78,3 +78,80 @@ header{
   color: #000000;
   border: black 1px solid;
 }
+.contentL{
+  
+  grid-column: 2/12;
+  background-color: #27526499;
+  font-family: Arial;
+  color: white;
+  margin: 5%;
+  height: 700px;
+  border-radius: 15px;
+}
+
+/*about us title setting*/
+.about{
+  position: relative;
+  font-size: 30px;
+  left: 45%;
+  top: 3%;
+  white-space:nowrap;
+  width: fit-content;
+}
+
+/*map setting*/
+#map{
+  position: relative;
+  width: 70%;
+  border-radius: 15px;
+}
+
+/*about us content setting*/
+.content{
+  position: relative;
+  font-size: 20px;
+  top: 5%;
+  left: 20%;
+  width: 88%;
+}
+.listll{
+  list-style: none;
+  width: fit-content;
+}
+
+/*button of content setting*/
+.teambutton {
+  position: relative;
+  background-color: #FDDF42;
+  width: fit-content;
+  height: 30px;
+  text-decoration: none;
+  color: black;
+  padding: 1%;
+  top: 15%;
+  left: 33%;
+  border-radius: 15px;
+
+}
+
+.teambutton:hover{
+  background-color: #705E00;
+  color: #ffffff;
+}
+.timebutton {
+    position: relative;
+    background-color: #FDDF42;
+    width: fit-content;
+    height: 30px;
+    text-decoration: none;
+    color: black;
+    padding: 1%;
+    top: 15%;
+    left: 48%;
+    border-radius: 15px;
+}
+
+.timebutton:hover{
+  background-color: #705E00;
+  color: #ffffff;
+}
