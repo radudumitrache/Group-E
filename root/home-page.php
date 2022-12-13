@@ -35,7 +35,7 @@
         </li>
 
         <li>
-          <a class="button2" href="aboutUs-page.php">
+          <a class="button2" href="aboutTeam-page.php">
             <button>About us</button>
           </a>
         </li>
