@@ -11,7 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Morgenster</title>
-  <link rel="stylesheet" href="css/home-page.css">
+  <link rel="stylesheet" type="text/css" href="css/aboutTeam-page.css">
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="icon" href="img/logo.svg">
 
 </head>
@@ -35,8 +36,8 @@
       </li>
 
       <li>
-        <a class="button2" href="aboutUs-page.php">
-          <button>About us</button>
+        <a class="button2" href="home-page.php">
+          <button>Home</button>
         </a>
       </li>
 
@@ -45,8 +46,12 @@
   </div>
 
 </header>
+
+<!--body content-->
 <div class="contentL">
+
   <p class="about">About Us</p>
+
   <div class="content">
     <p>Location</p>
     <img id="map"src="img/map.png" alt="map">
@@ -63,11 +68,8 @@
     
   <a class="teambutton"href="aboutUs-page.php">About our team</a>
   <a class="timebutton"href="schoolTime-page.php">School time</a>
+
 </div>
-
-
-
-
 
 </body>
 </html>
