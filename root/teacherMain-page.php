@@ -40,10 +40,24 @@
 
 </header>
 
+<main class="main">
+
+  <a href="" class="profileButton">
+    <div>
+      Profile
+    </div>
+  </a>
+
+  <a href="" class="classButton">
+    <div>
+      Classes
+    </div>
+  </a>
 
 
 
 
+</main>
 
 </body>
 </html>
