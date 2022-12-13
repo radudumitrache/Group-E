@@ -40,37 +40,70 @@
 
 </header>
 
-	<?php
-		$dbHandler = null;
-		try{
-			$dbHandler = new PDO("mysql:host=mysql;dbname=test;charset=utf8", "root", "qwerty");
-		}catch(Exception $ex){
-			echo $ex;
-		}
-		
-		if($dbHandler){
-			try{
-				$sql = $dbHandler->prepare( "SELECT * FROM parent_scores;" ); 
-				$sql->execute();				
-			}catch(Exception $ex){
-				echo $ex;
-			}
-			
-			if($sql->rowCount() > 0){
-				while($result = $sql->fetch(PDO::FETCH_ASSOC)){
-					var_dump($result);
-					
-				}
-			
-			}
-			else{
-				echo "count went wrong";
-			}
-			
-		}
-		
-
-	?>
+<main>
+		<div class="MainBox"> <!-- This box contains everything above the table -->
+			<div class="AboveContent">
+				<a class="button1" href="parentProfile.php">
+          			<button>Profile</button>
+        		</a>
+				<h1 class="TextHeading">Scores</h1>
+				<img
+					src="img/studentImg.svg" 
+					title="studentImg" 
+					alt="Image of a Student"
+				>
+			</div>
+			<div class="TableAlign"> <!-- This class is in order for me to align the table in the center -->
+				<table class="Table"> <!-- Table of scores -->
+					<tr>
+						<th>Course</th>
+						<th>Score</th>
+						<th id="NotesTh">Notes</th> <!-- The ids/classes in the th and tds are added for proper borders styling -->
+					</tr>
+					<tr>
+						<td class="RightTds">fvgbhnjmk</td>
+						<td></td>
+						<td class="LeftTds"></td>
+					</tr>
+					<tr>
+						<td class="RightTds">yo</td>
+						<td></td>
+						<td class="LeftTds"></td>
+					</tr>
+					<tr>
+						<td class="RightTds">aye</td>
+						<td></td>
+						<td class="LeftTds"></td>
+					</tr>
+					<tr>
+						<td class="RightTds">bruh</td>
+						<td></td>
+						<td class="LeftTds"></td>
+					</tr>
+					<tr>
+						<td class="RightTds">blah</td>
+						<td></td>
+						<td class="LeftTds"></td>
+					</tr>
+					<tr>
+						<td class="RightTds">ue</td>
+						<td></td>
+						<td class="LeftTds"></td>
+					</tr>
+					<tr>
+						<td class="RightTds">eh</td>
+						<td></td>
+						<td class="LeftTds"></td>
+					</tr>
+					<tr>
+						<td class="RightTds" id="BottomRow">man</td>
+						<td id="BottomRow"></td>
+						<td class="LeftTds" id="BottomRow"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</main>
 
 </body>
 </html>
