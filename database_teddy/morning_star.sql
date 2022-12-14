@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- 主机： mysql
--- 生成日期： 2022-12-14 21:14:14
--- 服务器版本： 10.9.2-MariaDB-1:10.9.2+maria~ubu2204
--- PHP 版本： 8.0.23
+-- Host: mysql
+-- Generation Time: Dec 14, 2022 at 10:45 PM
+-- Server version: 10.9.2-MariaDB-1:10.9.2+maria~ubu2204
+-- PHP Version: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `morning_star`
+-- Database: `morning_star`
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `abscence`
+-- Table structure for table `abscence`
 --
 
 CREATE TABLE `abscence` (
@@ -37,7 +37,7 @@ CREATE TABLE `abscence` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `abscence_subject`
+-- Table structure for table `abscence_subject`
 --
 
 CREATE TABLE `abscence_subject` (
@@ -48,7 +48,7 @@ CREATE TABLE `abscence_subject` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `exam`
+-- Table structure for table `exam`
 --
 
 CREATE TABLE `exam` (
@@ -62,7 +62,7 @@ CREATE TABLE `exam` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `student`
+-- Table structure for table `student`
 --
 
 CREATE TABLE `student` (
@@ -77,7 +77,7 @@ CREATE TABLE `student` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `student_exam`
+-- Table structure for table `student_exam`
 --
 
 CREATE TABLE `student_exam` (
@@ -88,7 +88,7 @@ CREATE TABLE `student_exam` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `subject`
+-- Table structure for table `subject`
 --
 
 CREATE TABLE `subject` (
@@ -99,17 +99,17 @@ CREATE TABLE `subject` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- 转储表的索引
+-- Indexes for dumped tables
 --
 
 --
--- 表的索引 `abscence`
+-- Indexes for table `abscence`
 --
 ALTER TABLE `abscence`
   ADD PRIMARY KEY (`date_id`);
 
 --
--- 表的索引 `exam`
+-- Indexes for table `exam`
 --
 ALTER TABLE `exam`
   ADD PRIMARY KEY (`date_id`);
