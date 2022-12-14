@@ -15,7 +15,7 @@
   <link rel="icon" href="img/logo.svg">
 
 </head>
-<script src="Js/Parent.js"></script>
+<script src="js/Parent.js"></script>
 <body>
 
   <header>
@@ -48,13 +48,13 @@
       </div>
     </div>
 
-    <a href="" class="eventsButton">
+    <a href="parentEvent-page.php" class="eventsButton">
       <div>
         Events
       </div>
     </a>
 
-    <a href="" class="scoresButton">
+    <a href="parentScores-page.php" class="scoresButton">
       <div>
         Scores
       </div>
@@ -66,7 +66,7 @@
 
       <div class="students">
 
-      <a href="" class="firstStudent">
+      <a href="parentProfile-page.php" class="firstStudent">
         <img src="img/student1.svg" alt="">
         <h2>Student 1</h2>
       </a>

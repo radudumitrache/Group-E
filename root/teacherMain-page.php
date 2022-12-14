@@ -42,13 +42,13 @@
 
 <main class="main">
 
-  <a href="" class="profileButton">
+  <a href="teacherProfile-page.php" class="profileButton">
     <div>
       Profile
     </div>
   </a>
 
-  <a href="" class="classButton">
+  <a href="teacherClasses-page.php" class="classButton">
     <div>
       Classes
     </div>
