@@ -6,7 +6,7 @@
 body{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  background-image: url("../img/background.svg");
+  background-image: url("img/background.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -21,6 +21,11 @@ header{
   justify-content: space-between;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+main {
+  grid-column: 1/13;
+}
+
 .logo{
   padding: 0 0 0 20px;
   grid-column: 2/3;
@@ -57,3 +62,87 @@ header{
   background-color: #705E00;
   color: #ffffff;
 }
+
+.border{
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  margin: 2.5% 10% 2.5% 10%;
+  border-radius: 10px;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+#backButton {
+  align-self: flex-start;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.border > h1, h2, h3, p {
+  color: white;
+}
+
+.border > p {
+  margin-bottom: 10px;
+}
+
+.border > h2 {
+  font-size: 1.75em;
+  margin-bottom: 20px;
+}
+
+#ProfilePhoto {
+  width: 300px;
+  border: 1px solid black;
+  clip-path: circle();
+
+  margin-bottom: 10px;
+}
+
+.button2{
+  background-color: #FDDF42;
+  border-radius: 15px;
+  width: 150px;
+  height: 60px;
+}
+
+.button2 > button{
+  background-color: #FDDF42;
+  border-radius: 15px;
+  border: none;
+  width: 150px;
+  height: 60px;
+  font-size: 20px;
+  font-family: Arial, serif;
+}
+
+.button2 :hover{
+  background-color: #705E00;
+  color: #ffffff;
+}
+
+#parents {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+.parent {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
