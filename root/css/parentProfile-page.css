@@ -23,7 +23,7 @@ header{
 }
 
 main {
-    grid-column: 1/13;
+  grid-column: 1/13;
 }
 
 .logo{
@@ -64,85 +64,85 @@ main {
 }
 
 .border{
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 
-    margin: 2.5% 10% 2.5% 10%;
-    border-radius: 10px;
+  margin: 2.5% 10% 2.5% 10%;
+  border-radius: 10px;
 }
 
 h1 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 #backButton {
-    align-self: flex-start;
-    margin-left: 20px;
-    margin-top: 20px;
+  align-self: flex-start;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .border > h1, h2, h3, p {
-    color: white;
+  color: white;
 }
 
 .border > p {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .border > h2 {
-    font-size: 1.75em;
-    margin-bottom: 20px;
+  font-size: 1.75em;
+  margin-bottom: 20px;
 }
 
 #ProfilePhoto {
-    width: 300px;
-    border: 1px solid black;
-    clip-path: circle();
+  width: 300px;
+  border: 1px solid black;
+  clip-path: circle();
 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .button2{
-    background-color: #FDDF42;
-    border-radius: 15px;
-    width: 150px;
-    height: 60px;
+  background-color: #FDDF42;
+  border-radius: 15px;
+  width: 150px;
+  height: 60px;
 }
 
 .button2 > button{
-    background-color: #FDDF42;
-    border-radius: 15px;
-    border: none;
-    width: 150px;
-    height: 60px;
-    font-size: 20px;
-    font-family: Arial, serif;
+  background-color: #FDDF42;
+  border-radius: 15px;
+  border: none;
+  width: 150px;
+  height: 60px;
+  font-size: 20px;
+  font-family: Arial, serif;
 }
 
 .button2 :hover{
-    background-color: #705E00;
-    color: #ffffff;
+  background-color: #705E00;
+  color: #ffffff;
 }
 
 #parents {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 
-    width: 90%;
-    margin-bottom: 30px;
+  width: 90%;
+  margin-bottom: 30px;
 }
 
 .parent {
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 

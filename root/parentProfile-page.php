@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Morgenster</title>
-    <link rel="stylesheet" href="parentProfile-page.css.css">
+    <link rel="stylesheet" href="css/parentProfile-page.css">
     <link rel="icon" href="img/logo.svg">
 
 </head>

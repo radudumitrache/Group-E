@@ -7,7 +7,7 @@
     <meta name="author" content="Yourname">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morgenster</title>
-    <link rel="stylesheet" href="parentEvent-page.css">
+    <link rel="stylesheet" href="css/parentEvent-page.css">
     <link rel="icon" href="img/logo.svg">
 </head>
 <body>
