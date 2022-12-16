@@ -45,6 +45,7 @@
   </div>
 
 </header>
+<main>
   <form method="post" action="<?php html_entities($_SERVER['PHP_SELF'])?>" >
     <h1>Sign in</h1>
     <label for="username">Username</label>
@@ -58,6 +59,6 @@
   </form>
 
 
-
+</main>
 </body>
 </html>
