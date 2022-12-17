@@ -16,7 +16,7 @@ body{
 	font-style: normal;
 	font-weight: 400;
 	font-size: 25px;
-	line-height: 29px;
+	line-height: 25px;
 }
 
 header{
@@ -31,7 +31,7 @@ header{
 }
 .logo{
 	padding: 0 0 0 20px;
-	width: 250px;
+	width: 220px;
 	height:auto;
 	grid-column: 2/3;
 }

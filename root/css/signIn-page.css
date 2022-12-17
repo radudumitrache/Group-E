@@ -80,6 +80,7 @@ header{
   color: #000000;
   border: black 1px solid;
 }
+
 form
 {
 
@@ -148,17 +149,17 @@ form > input[type="text"]
 {
   background: #FDDF42;
   border-radius: 15px;
+  border: none;
   width:142px;
   height:64px;
   font-family: 'Arial';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 29px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
 }
 #footerInfo input:hover
 {
-  transition: ease-in 0.4s;
   background: #705E00;
   color:white;
 }

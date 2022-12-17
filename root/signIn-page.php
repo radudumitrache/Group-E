@@ -45,7 +45,8 @@
   </div>
 
 </header>
-  <form method="post" action="<?php html_entities($_SERVER['PHP_SELF'])?>" >
+
+  <form method="post" action="<?php html_entity_decode ($_SERVER['PHP_SELF'])?>" >
     <h1>Sign in</h1>
     <label for="username">Username</label>
     <input type="text" id="username" name="username">
