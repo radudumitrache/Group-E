@@ -53,23 +53,27 @@
 </header>
   <main>
     <div id="formContainer">
-    <form action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">
-      <h1>Reset Password</h1>
-      <label for="email">Enter your E-mail </label>
-      <input type="text" id="email" name="email">
-      <label for="code">Enter the code</label>
-      <input type="text" id="code" name="code">
-      <input type="submit" id="submit" name="sendCode" value="Send code">
-    </form>
-    <form action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">
-      
-      <label for="newPass">New Password</label>
-      <input type="text" id="newPass" name="newPassword">
-      <div id="buttonContainer">
-        <input type="submit" id="submit" name="submit" value="Submit">
-      </div>
+      <h1> Reset Password</h1>
+      <form id="codeForm" action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">  
+        <label for="email">Enter your E-mail</label>
+        <div id="codeInfo">
+          <input type="text" id="emai" name="email">
+          <input type="submit" name="sendCode">  
+        </div>
+      </form>
+      <form action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">
+        <label for="code">Enter code </label>
+        <input type="text" id="code" name="fillCode">
+        <label for="newPass">New Password</label>
+        <input type="text" id ="newPass" name="newPass"> 
+        <input type="submit" id="submit" name="submit">
       </form>
     </div>
+
+
+
+
+
   </main>
 </body>
 </html>
