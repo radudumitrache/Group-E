@@ -10,7 +10,7 @@
   <meta name="author" content="Yourname">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morgenster</title>
-  <link rel="stylesheet" href="css/teacherAbsentec-page.css">
+  <link rel="stylesheet" href="css/teacherAbsencespage.css">
   <link rel="icon" href="img/logo.svg">
 
 </head>
@@ -30,7 +30,7 @@
       <div class="listContainer">
         <ul class="headerList">
           <li>
-            <a class="button1" href="home-page.php">
+            <a class="button1" href="signIn-page.php">
               <button>SignOut</button>
             </a>
           </li>
@@ -42,7 +42,7 @@
     <main>
 
       <div id="mainContent">
-        <div class="button1" href="home-page.php"><button>Profile</button></div>
+        <div class="button1" href="teacherAbsencespage.php"><button>Profile</button></div>
         <h1 class="textSettings">Absences</h1>
         <img src="img/teacherImg.svg" title="teacherImg" alt="teacherImg">
       </div>
@@ -53,8 +53,8 @@
               <th>Students</th>
               <th>Date</th>
               <th id="NotesTh">Notes</th>
-            </tr>
-            <tr>
+				    </tr>
+				    <tr>
               <td class="RightTds">1</td>
               <td></td>
               <td class="LeftTds"></td>
@@ -96,10 +96,9 @@
             </tr>
         </table>
       </div>
-
     </main>
-
   </div>
+
 
 </body>
 </html>
