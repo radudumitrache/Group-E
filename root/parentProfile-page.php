@@ -41,13 +41,15 @@
 </header>
 <main>
     <div class="border">
-        <a href="parentMain-page.php">
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" id="backButton">
-                <rect width="60" height="60" rx="15" fill="#FDDF42"/>
-                <line x1="38.7827" y1="14.3451" x2="18.4498" y2="30.2309" stroke="black" stroke-width="2" stroke-linecap="round"/>
-                <line x1="39.2916" y1="47.9034" x2="18.173" y2="31.4037" stroke="black" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-        </a>
+        <div class="insideBorder">
+            <a href="parentMain-page.php">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" id="backButton">
+                    <rect width="60" height="60" rx="15" fill="#FDDF42"/>
+                    <line x1="38.7827" y1="14.3451" x2="18.4498" y2="30.2309" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="39.2916" y1="47.9034" x2="18.173" y2="31.4037" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </a>
+        </div>
 
         <h1>Profile</h1>
         <img src="img/kid.jpg" id="ProfilePhoto">
