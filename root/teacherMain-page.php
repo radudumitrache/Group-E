@@ -40,10 +40,24 @@
 
 </header>
 
+<main class="main">
+
+  <a href="teacherProfile-page.php" class="profileButton">
+    <div>
+      Profile
+    </div>
+  </a>
+
+  <a href="teacherClasses-page.php" class="classButton">
+    <div>
+      Classes
+    </div>
+  </a>
 
 
 
 
+</main>
 
 </body>
 </html>

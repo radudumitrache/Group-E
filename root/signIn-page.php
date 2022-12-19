@@ -46,8 +46,17 @@
 
 </header>
 
-
-
+  <form method="post" action="<?php html_entity_decode ($_SERVER['PHP_SELF'])?>" >
+    <h1>Sign in</h1>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username">
+    <label for="password">Password</label>
+    <input type="text" id="password" name="password">
+    <div id="footerInfo">
+      <a href="resetPass-page.php">Forgot your password?</a>
+      <input type="submit" id="submit" name="submit" value="Sign In">    
+    </div>
+  </form>
 
 
 

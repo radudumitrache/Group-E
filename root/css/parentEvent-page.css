@@ -1,6 +1,6 @@
 *{
-  box-sizing: border-box;
-  margin: 0;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 body{
@@ -18,14 +18,14 @@ body{
 }
 
 header{
-  grid-column: 1/13;
-  width: 100%;
-  background-color: #AAE0FF;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    grid-column: 1/13;
+    width: 100%;
+    background-color: #AAE0FF;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .logo{
   padding: 0 0 0 20px;
@@ -35,56 +35,56 @@ header{
 }
 
 .listcontainer{
-  grid-column: 8/12;
-  width: 100%;
-  padding: 0 20px 0 0;
+    grid-column: 8/12;
+    width: 100%;
+    padding: 0 20px 0 0;
 }
 
 .headerList{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
 }
 .button1{
-  background-color: #FDDF42;
-  border-radius: 15px;
-  width: 150px;
-  height: 60px;
+    background-color: #FDDF42;
+    border-radius: 15px;
+    width: 150px;
+    height: 60px;
 }
 .button1 button{
-  background-color: #FDDF42;
-  border-radius: 15px;
-  border: none;
-  width: 150px;
-  height: 60px;
-  font-size: 20px;
-  font-family: Arial, serif;
+    background-color: #FDDF42;
+    border-radius: 15px;
+    border: none;
+    width: 150px;
+    height: 60px;
+    font-size: 20px;
+    font-family: Arial, serif;
 }
 .button2{
-  background-color: #198DCE;
-  border-radius: 15px;
-  width: 150px;
-  height: 60px;
+    background-color: #198DCE;
+    border-radius: 15px;
+    width: 150px;
+    height: 60px;
 }
 .button2 button{
-  background-color: #198DCE;
-  border-radius: 15px;
-  border: none;
-  color: #ffffff;
-  width: 150px;
-  height: 60px;
-  font-size: 20px;
-  font-family: Arial, serif;
+    background-color: #198DCE;
+    border-radius: 15px;
+    border: none;
+    color: #ffffff;
+    width: 150px;
+    height: 60px;
+    font-size: 20px;
+    font-family: Arial, serif;
 }
 .button1 :hover{
-  background-color: #705E00;
-  color: #ffffff;
+    background-color: #705E00;
+    color: #ffffff;
 }
 .button2 :hover{
-  background-color: #C5EAFF;
-  color: #000000;
-  border: black 1px solid;
+    background-color: #C5EAFF;
+    color: #000000;
+    border: black 1px solid;
 }
 
 main {

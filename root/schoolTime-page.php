@@ -12,6 +12,7 @@
 
   <title>Morgenster</title>
   <link rel="stylesheet" href="css/schoolTime-page.css">
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="icon" href="img/logo.svg">
 
 </head>
@@ -46,9 +47,25 @@
 
 </header>
 
+<!--body content-->
+<div class="contentL">
 
+  <p class="about">School time</p>
 
+  <div class="backbutton">
+ 
+    <a href="aboutTeam-page.php"><img src="img/backbutton.png" alt="backbutton"></a>
 
+  </div>
+
+  <div class="content">
+      
+    <img id="map"src="img/map.png" alt="map">
+    <p>E-mail: example@gmail.com</p>
+
+  </div>
+      
+</div>
 
 
 </body>

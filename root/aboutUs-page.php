@@ -12,6 +12,7 @@
 
   <title>Morgenster</title>
   <link rel="stylesheet" href="css/aboutUs-page.css">
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="icon" href="img/logo.svg">
 
 </head>
@@ -46,10 +47,26 @@
 
 </header>
 
+<!--body content-->
+<div class="contentL">
 
+  <p class="about">About our team</p>
 
+  <div class="backbutton">
+ 
+    <a href="aboutTeam-page.php"><img src="img/backbutton.png" alt="backbutton"></a>
 
+  </div>
 
+  <div class="content">
+      
+    <img id="map"src="img/map.png" alt="map">
+    <p>E-mail: example@gmail.com</p>
+    
+  </div>
+      
+
+</div>
 
 </body>
 </html>

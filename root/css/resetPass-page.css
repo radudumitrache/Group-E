@@ -99,3 +99,89 @@ header{
   color: #000000;
   border: black 1px solid;
 }
+
+main
+{
+  grid-column: 1/13;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1{
+  text-align: center;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 52px;
+  color: #FFFFFF;
+}
+
+#formContainer
+{
+  background: rgba(39, 82, 100, 0.6);
+  border-radius: 10px;
+  margin-top: 90px;
+  width: 629px;
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.forms{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60%;
+}
+.form1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.input1{
+  display: flex;
+  flex-direction: column;
+}
+form label{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+form input{
+  background: #D9D9D9;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.25); 
+  border-radius: 15px;
+  width: 470px;
+  height: 64px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+#code{
+  width: 328px;
+}
+#submit1{
+  width: 142px;
+  height:64px;
+  font-family: 'Arial';
+  font-size: 25px;
+  background: #FDDF42;
+  border-radius: 15px;
+  border: none;
+}
+.input2{
+  display: flex;
+}
+form input[name="submit"]:hover{
+  background: #705E00;
+  color:white;
+}
+form input[name="sendCode"]:hover{
+  background: #705E00;
+  color:white;
+} 
