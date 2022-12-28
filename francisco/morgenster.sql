@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Dec 15, 2022 at 02:31 PM
+-- Generation Time: Dec 28, 2022 at 01:37 PM
 -- Server version: 10.9.2-MariaDB-1:10.9.2+maria~ubu2204
 -- PHP Version: 8.0.23
 
@@ -170,7 +170,8 @@ CREATE TABLE `users/students` (
 -- Indexes for table `abscence`
 --
 ALTER TABLE `abscence`
-  ADD PRIMARY KEY (`dateID`);
+  ADD PRIMARY KEY (`dateID`),
+  ADD KEY `studentID` (`studentID`);
 
 --
 -- Indexes for table `abscences/subjects`
@@ -203,7 +204,8 @@ ALTER TABLE `events/users`
 -- Indexes for table `exams`
 --
 ALTER TABLE `exams`
-  ADD PRIMARY KEY (`dateID`);
+  ADD PRIMARY KEY (`dateID`),
+  ADD KEY `subjectID` (`subjectID`);
 
 --
 -- Indexes for table `students`
@@ -282,6 +284,12 @@ ALTER TABLE `users`
 --
 
 --
+-- Constraints for table `abscence`
+--
+ALTER TABLE `abscence`
+  ADD CONSTRAINT `abscence_ibfk_1` FOREIGN KEY (`studentID`) REFERENCES `students` (`studentID`);
+
+--
 -- Constraints for table `abscences/subjects`
 --
 ALTER TABLE `abscences/subjects`
@@ -301,6 +309,12 @@ ALTER TABLE `events/students`
 ALTER TABLE `events/users`
   ADD CONSTRAINT `foreign_key_1` FOREIGN KEY (`eventID`) REFERENCES `events` (`eventID`),
   ADD CONSTRAINT `foreign_key_2` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`);
+
+--
+-- Constraints for table `exams`
+--
+ALTER TABLE `exams`
+  ADD CONSTRAINT `exams_ibfk_1` FOREIGN KEY (`subjectID`) REFERENCES `subject` (`subjectID`);
 
 --
 -- Constraints for table `students/exams`
