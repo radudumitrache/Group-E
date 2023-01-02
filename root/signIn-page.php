@@ -1,3 +1,45 @@
+<?php
+  session_start();
+  include("databaseConnect.php");
+  $sql="SELECT email_address,password,role FROM users";
+  $stm=$dbhandler->query($sql);
+  $accounts=$stm->fetchall(PDO::FETCH_ASSOC);
+  
+  if ($_SERVER["REQUEST_METHOD"]=="POST")
+  {
+    $email=filter_input(INPUT_POST,"email",FILTER_VALIDATE_EMAIL);
+    $pass=filter_input(INPUT_POST,"password",FILTER_SANITIZE_SPECIAL_CHARS);
+   if (strlen($email)!=0)
+   {
+    foreach ($accounts as $account)
+    {
+      if ($account["email_address"]==$email)
+      {
+          $_SESSION["user"]=$account;
+          break;
+      }
+    }
+    if (isset($_SESSION["user"]))
+    {
+     
+      if ($_SESSION["user"]["password"]==$pass)
+        {
+          if ($_SESSION["user"]["role"]==1)
+            header("Location: parentMain-page.php");
+          else if($_SESSION["user"]["role"]==0)
+            header("Location: teacherMain_page.php");
+        }
+      else
+        echo "<script>alert('Wrong password')</script>";
+    }
+    
+   }
+   else
+    echo "<script>alert('Invalid email')</script>";
+    
+  }
+
+  ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -48,8 +90,8 @@
 <main>
   <form method="post">
     <h1>Sign in</h1>
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email">
     <label for="password">Password</label>
     <input type="text" id="password" name="password">
     <div id="footerInfo">
@@ -57,19 +99,6 @@
       <input type="submit" id="submit" name="submit" value="Sign In">    
     </div>
   </form>
-  <?php
-  include("databaseConnect.php");
-  $sql="SELECT email_address,password,role FROM users";
-  $stm=$dbhandler->query($sql);
-  $accounts=$stm->fetchall(PDO::FETCH_ASSOC);
-  if ($_SERVER["REQUEST_METHOD"]=="POST")
-  {
-    $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_SPECIAL_CHARS);
-    
-  }
-
-  ?>
-
 </main>
 </body>
 </html>
