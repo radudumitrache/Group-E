@@ -46,7 +46,7 @@
 
 </header>
 <main>
-  <form method="post" action="<?php html_entities($_SERVER['PHP_SELF'])?>" >
+  <form method="post">
     <h1>Sign in</h1>
     <label for="username">Username</label>
     <input type="text" id="username" name="username">
@@ -57,7 +57,18 @@
       <input type="submit" id="submit" name="submit" value="Sign In">    
     </div>
   </form>
+  <?php
+  include("databaseConnect.php");
+  $sql="SELECT email_address,password,role FROM users";
+  $stm=$dbhandler->query($sql);
+  $accounts=$stm->fetchall(PDO::FETCH_ASSOC);
+  if ($_SERVER["REQUEST_METHOD"]=="POST")
+  {
+    $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_SPECIAL_CHARS);
+    
+  }
 
+  ?>
 
 </main>
 </body>
