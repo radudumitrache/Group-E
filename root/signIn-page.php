@@ -1,7 +1,7 @@
 <?php
   session_start();
   include("databaseConnect.php");
-  $sql="SELECT email_address,password,role FROM users";
+  $sql="SELECT `userID`,`email_address`,`password`,`role` FROM `users`";
   $stm=$dbhandler->query($sql);
   $accounts=$stm->fetchall(PDO::FETCH_ASSOC);
   
@@ -24,10 +24,68 @@
      
       if ($_SESSION["user"]["password"]==$pass)
         {
-          if ($_SESSION["user"]["role"]==1)
-            header("Location: parentMain-page.php");
-          else if($_SESSION["user"]["role"]==0)
-            header("Location: teacherMain_page.php");
+          if ($_SESSION["user"]["role"]=="parent")
+            { 
+              $sql="SELECT parentID FROM parents where userID=:id";
+              $stmt=null;
+              try
+              {
+                $stmt=$dbhandler->prepare($sql);
+                $stmt->bindParam(":id",$_SESSION["user"]["userID"],PDO::PARAM_INT);
+                $stmt->execute();
+              }
+              catch (Exception $e)
+              {
+                $message=$e->getMessage();
+                echo "<script>alert('Something went wrong ->$message')</script>";
+              }
+              if (isset($stmt))
+              {
+                if ($stmt->rowCount()==1)
+                {
+                    $rez=$stmt->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION["parentID"]=$rez["parentID"];
+                   
+                }
+                else
+                {
+                  echo "<script>alert('Error Database not correct')</script>";
+                }
+              }
+              header("Location: parentMain-page.php");
+            }
+          else if($_SESSION["user"]["role"]=="teacher")
+            {
+              $sql="SELECT teacherID FROM teachers where userID=:id";
+              $stmt=null;
+              try
+              {
+                $stmt=$dbhandler->prepare($sql);
+                $stmt->bindParam(":id",$_SESSION["user"]["userID"],PDO::PARAM_INT);
+                $stmt->execute();
+              }
+              catch (Exception $e)
+              {
+                $message=$e->getMessage();
+                echo "<script>alert('Something went wrong ->$message')</script>";
+              }
+              if (isset($stmt))
+              {
+                if ($stmt->rowCount()==1)
+                {
+                    $rez=$stmt->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION["teacherID"]=$rez["teacherID"];
+                  
+                }
+                else
+                {
+                  echo "<script>alert('Error Database not correct')</script>";
+                }
+              }
+              header("Location: teacherMain_page.php");
+            }
+          else if ($_SESSION["user"]["role"]=="admin")
+            header("Location: ");
         }
       else
         echo "<script>alert('Wrong password')</script>";
