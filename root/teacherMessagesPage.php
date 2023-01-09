@@ -55,7 +55,10 @@
               <th>Student Name</th>
               <th id="MessagesTh">Messages</th>
             </tr>
-           
+           <?php
+              $sql="SELECT `classID`,'notes'";
+
+            ?>
         </table>
       </div>
 
