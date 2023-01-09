@@ -99,6 +99,7 @@ header{
   color: #000000;
   border: black 1px solid;
 }
+
 main
 {
   grid-column: 1/13;
@@ -114,27 +115,33 @@ main
   margin-top: 1%;
   margin-bottom: 1%;
   width: 629px;
-  height: 610px;
-  padding: 69px 79px 69px 79px;
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
+
 form label
 {
-  padding:10px 0px 10px 0px;
-  font-family: 'Inter';
+padding:10px 0px 10px 0px;
+font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
 font-size: 25px;
 line-height: 30px;
 color: #FFFFFF;
 }
+
 h1
 {
   text-align: center;
   font-family: 'Arial';
+
   font-style: normal;
   font-weight: 400;
-  font-size: 45px;
-  line-height: 52px;
+  font-size: 25px;
+  line-height: 30px;
   color: #FFFFFF;
   padding-bottom: 36px;
 }
@@ -158,7 +165,10 @@ input[type="text"]
   border-radius: 15px;
   width: 470px;
   height: 64px;
+  margin-bottom: 30px;
+  font-size: 25px;
 }
+
 input[name="email"]
 {
   width:300px;
@@ -174,7 +184,9 @@ input[type="submit"]
   line-height: 29px;
   background: #FDDF42;
   border-radius: 15px;
+  border: none;
 }
+
 input[name="submit"]
 {
   margin-top:3%;

@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Morgenster</title>
-  <link rel="stylesheet" href="css/teacherProfile-page.css">
+  <link rel="stylesheet" href="css/teacherProfilepage.css">
   <link rel="icon" href="img/logo.svg">
 
 </head>
@@ -31,7 +31,7 @@
       <div class="listContainer">
         <ul class="headerList">
           <li>
-            <a class="button1" href="home-page.php">
+            <a class="button1" href="signIn-page.php">
               <button>SignOut</button>
             </a>
           </li>
@@ -47,9 +47,10 @@
           <a class="textSettings" href="home-page.php">Change profile photo</a>
           <h3 class="textSettings">Phone number: +31 23456789</h3>
           <h3 class="textSettings">E-mail: example@gmail.com</h3>
-          <div class="button1" href="home-page.php"><button>Classes</button></div>
+          <div class="button1" href="teacherClasses-page.php"><button>Classes</button></div>
       </div>
     </main>
+
 
   </div>
 

@@ -53,6 +53,7 @@
 </header>
   <main>
     <div id="formContainer">
+
       <h1> Reset Password</h1>
       <form id="codeForm" action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">  
         <label for="email">Enter your E-mail</label>

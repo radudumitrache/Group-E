@@ -88,6 +88,7 @@ main
   justify-content: center;
   align-items: center;
 }
+
 form
 {
 
@@ -159,14 +160,13 @@ form > input[type="text"]
   width:23%;
   height:64px;
   font-family: 'Arial';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 29px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
 }
 #footerInfo input:hover
 {
-  transition: ease-in 0.4s;
   background: #705E00;
   color:white;
 }

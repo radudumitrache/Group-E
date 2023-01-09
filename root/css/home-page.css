@@ -23,6 +23,8 @@ header{
 }
 .logo{
   padding: 0 0 0 20px;
+  width: 220px;
+	height:auto;
   grid-column: 2/3;
 }
 
@@ -78,6 +80,7 @@ header{
   color: #000000;
   border: black 1px solid;
 }
+
 main
 {
   grid-column: 1/13;
