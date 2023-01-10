@@ -54,41 +54,27 @@
   <main>
     <div id="formContainer">
 
-      <h1>Reset Password</h1>
-
-      <div class="forms">
-
-        <form action="<?php  htmlentities($_SERVER['PHP_SELF'])?>" method="post" class="form1">
-
-          <div class="input1">
-            <label for="email">Enter your E-mail</label>
-              <input type="email" id="email" name="email">
-          </div>
-
-          <div class="input1">
-            <label for="code">Enter the code</label>
-            <div class="input2">
-                <input type="text" id="code" name="code">
-                <input type="submit" id="submit1" name="sendCode" value="Send code">
-            </div>
-          </div>
-
-        </form>
-
-        <form action="<?php  htmlentities($_SERVER['PHP_SELF'])?>" method="post" class="form1">
-        <div>
-          <label for="newPass">New Password</label>
-          <div class="input2">
-            <input type="text" id="code" name="newPassword">
-            <input type="submit" id="submit1" name="submit" value="Submit">
-          </div>
+      <h1> Reset Password</h1>
+      <form id="codeForm" action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">  
+        <label for="email">Enter your E-mail</label>
+        <div id="codeInfo">
+          <input type="text" id="emai" name="email">
+          <input type="submit" name="sendCode">  
         </div>
-
-        </form>
-
-      </div>
-
+      </form>
+      <form action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">
+        <label for="code">Enter code </label>
+        <input type="text" id="code" name="fillCode">
+        <label for="newPass">New Password</label>
+        <input type="text" id ="newPass" name="newPass"> 
+        <input type="submit" id="submit" name="submit">
+      </form>
     </div>
+
+
+
+
+
   </main>
 </body>
 </html>
