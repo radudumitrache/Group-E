@@ -84,6 +84,30 @@ main{
   font-weight: 400;
 }
 
+.backbutton img{
+  width: 50px;
+}
+
+.backbutton{
+  position: relative;
+  top: -43%;
+  left: -15%;
+}
+
+input[type="submit"]{
+  background-color: #FDDF42;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  white-space:nowrap;
+  width: 100px;
+  height: 30px;
+  border: none;
+  text-decoration: none;
+  color: black;
+  border-radius: 15px;
+}
+
 main > div > a{
   color: white;
   text-decoration-style: dashed;

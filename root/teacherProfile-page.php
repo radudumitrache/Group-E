@@ -1,3 +1,29 @@
+<?php session_start();?>
+
+<?php
+        include("dbLink.php");
+
+       // get the userid
+        $userID = $_SESSION["user"]["userID"];
+
+        try{
+          $stmt = $dbHandler -> prepare("SELECT photo, telephone_number, email_address FROM users where userID = $userID");
+          $stmt->execute();
+          $stmt->bindColumn(1, $photo);
+          $stmt->bindColumn(2, $phone);
+          $stmt->bindColumn(3,$email);
+
+          
+          while ($resule = $stmt->fetch()) {
+            $_SESSION["phone"] = $phone;
+            $_SESSION["email"] = $email;
+          }
+        }
+        catch(Exception $ex){
+          echo $ex;
+        }
+      ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -31,7 +57,7 @@
       <div class="listContainer">
         <ul class="headerList">
           <li>
-            <a class="button1" href="home-page.php">
+            <a class="button1" href="signIn-page.php">
               <button>SignOut</button>
             </a>
           </li>
@@ -43,13 +69,17 @@
     <main>
       <div id="mainContent">
           <h1 class="textSettings">Profile</h1>
-          <img src="img/teacherImg.svg" title="teacherImg" alt="teacherImg">
-          <a class="textSettings" href="home-page.php">Change profile photo</a>
-          <h3 class="textSettings">Phone number: +31 23456789</h3>
-          <h3 class="textSettings">E-mail: example@gmail.com</h3>
-          <div class="button1" href="home-page.php"><button>Classes</button></div>
+          <img src="uploade/<?php echo $photo; ?>" title="teacherImg" alt="teacherImg">
+          <a class="textSettings" href="teacherChangephoto-page.php">Change profile photo</a>
+          <h3 class="textSettings"><?php echo "Phone number:$phone";?></h3>
+          <h3 class="textSettings"><?php echo "E-mail:$email";?> </h3>
+          <div class="button1" href="teacherClasses-page.php"><button>Classes</button></div>
+
       </div>
+
+      
     </main>
+
 
   </div>
 
