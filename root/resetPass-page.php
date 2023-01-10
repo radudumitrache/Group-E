@@ -55,14 +55,14 @@
     <div id="formContainer">
 
       <h1> Reset Password</h1>
-      <form id="codeForm" action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">  
+      <form id="codeForm" action="" method="post">  
         <label for="email">Enter your E-mail</label>
         <div id="codeInfo">
           <input type="text" id="emai" name="email">
           <input type="submit" name="sendCode">  
         </div>
       </form>
-      <form action="<?php  html_entities($_SERVER['PHP_SELF'])?>" method="post">
+      <form  method="post">
         <label for="code">Enter code </label>
         <input type="text" id="code" name="fillCode">
         <label for="newPass">New Password</label>
