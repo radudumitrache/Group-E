@@ -7,7 +7,7 @@
         $userID = $_SESSION["user"]["userID"];
 
         try{
-          $stmt = $dbHandler -> prepare("SELECT photo, telephone_number, email_address FROM users where userID = $userID");
+          $stmt = $dbHandler -> prepare("SELECT user_photo, telephone_number, email_address FROM users where userID = $userID");
           $stmt->execute();
           $stmt->bindColumn(1, $photo);
           $stmt->bindColumn(2, $phone);

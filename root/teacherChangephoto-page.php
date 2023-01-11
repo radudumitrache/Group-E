@@ -5,9 +5,10 @@
 
   // get the userid
   $userID = $_SESSION["user"]["userID"];
+  //$userID = 1001;
 
   try{
-    $stmt = $dbHandler -> prepare("SELECT photo, telephone_number, email_address FROM users where userID = $userID");
+    $stmt = $dbHandler -> prepare("SELECT user_photo, telephone_number, email_address FROM users where userID = $userID");
     $stmt->execute();
     $stmt->bindColumn(1, $photo);
     $stmt->bindColumn(2, $phone);
@@ -40,7 +41,7 @@
         
         // if move file success, insert data to database
         if ($rs) {
-          $stmt = $dbHandler -> prepare("UPDATE users SET photo = :newImg WHERE userID = $userID");
+          $stmt = $dbHandler -> prepare("UPDATE users SET user_photo = :newImg WHERE userID = $userID");
   
           $stmt->bindParam(":newImg", $image, PDO::PARAM_STR);
           $stmt ->execute();
