@@ -119,7 +119,7 @@
         
           <h1 class="textSettings">Profile</h1>
 
-          <img src="uploade/<?php echo $photo; ?>" title="teacherImg" alt="teacherImg">
+          <img class = "image" src="uploade/<?php echo $photo; ?>" title="teacherImg" alt="teacherImg">
           <form method="POST" enctype="multipart/form-data">
 
           <label class="textSettings"  for="file_upload">Choose file</label>

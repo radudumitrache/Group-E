@@ -69,7 +69,7 @@
     <main>
       <div id="mainContent">
           <h1 class="textSettings">Profile</h1>
-          <img src="uploade/<?php echo $photo; ?>" title="teacherImg" alt="teacherImg">
+          <img class = "image" src="uploade/<?php echo $photo; ?>" title="teacherImg" alt="teacherImg">
           <a class="textSettings" href="teacherChangephoto-page.php">Change profile photo</a>
           <h3 class="textSettings"><?php echo "Phone number:$phone";?></h3>
           <h3 class="textSettings"><?php echo "E-mail:$email";?> </h3>

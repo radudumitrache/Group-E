@@ -78,6 +78,13 @@ main{
   row-gap: 30px;
 }
 
+.image{
+  max-width:100px;
+  width:100px;
+  width:expression(document.body.clientWidth>100?”100px”:”auto”);
+  overflow:hidden;
+}
+
 .textSettings{
   font-family: 'Arial';
   font-style: normal;
