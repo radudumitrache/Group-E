@@ -109,17 +109,17 @@ main {
 }
 
 #eventImg img{
-  max-width: 800px;
-  width:800px;
-  width:expression(document.body.clientwidth>800?”800px”:”auto”);
+  max-width: 85%;
+  width:85%;
+  width:expression(document.body.clientwidth>85?”85%”:”auto”);
   overflow:hidden;
 }
 
 .mainContent {
 	position: relative;
-    top: 7%;
+    top: 1%;
     left: 4%;
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 30px;
     margin: 3%;
 }

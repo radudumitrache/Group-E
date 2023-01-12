@@ -5,6 +5,7 @@
 
        // get the userid
         $userID = $_SESSION["user"]["userID"];
+        //$userID = 1001;
 
         try{
           //$stmt = $dbHandler -> prepare("SELECT photo, telephone_number, email_address FROM users where userID = $userID");

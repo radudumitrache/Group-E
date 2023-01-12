@@ -5,7 +5,7 @@
 
         try{
           //$stmt = $dbHandler -> prepare("SELECT events_school.photo, events_school.date, events_school.description FROM events_school ORDER BY eventID DESC LIMIT 0,1");
-          $stmt = $dbHandler -> prepare("SELECT events_school.event_photo, events_school.event_date, events_school.event_description FROM events_school ORDER BY eventID DESC LIMIT 0,1");
+          $stmt = $dbHandler -> prepare("SELECT events_school.photo, events_school.event_date, events_school.event_description FROM events_school ORDER BY eventID DESC LIMIT 0,1");
           $stmt->execute();
           $stmt->bindColumn(1, $photo);
           $stmt->bindColumn(2, $date);

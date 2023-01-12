@@ -79,9 +79,9 @@ main{
 }
 
 .image{
-  max-width:100px;
-  width:100px;
-  width:expression(document.body.clientWidth>100?”100px”:”auto”);
+  max-width:150px;
+  width:150px;
+  width:expression(document.body.clientWidth>150?”150px”:”auto”);
   overflow:hidden;
 }
 
