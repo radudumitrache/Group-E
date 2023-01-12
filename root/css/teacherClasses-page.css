@@ -87,6 +87,12 @@ header{
   font-family: 'Arial', serif;
   font-size: 45px;
 }
+#btclass{
+  display: flex; 
+  flex-direction:column;
+  justify-content: space-between;
+  height: 150px
+}
 .button3{
   background-color: #FDDF42;
   border-radius: 15px;
@@ -106,19 +112,76 @@ header{
   background-color: #705E00;
   color: #ffffff;
 }
-.mainTable{
-  width: 80%;
+.forms{
+  width: 90%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+.forms label{
+  font-size: 20px;
+  font-family: Arial, serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.form1{
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form2{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form3{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.studentId{
+  width: 100px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+.notes{
+  width: 300px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+.submits{
+  background-color: #FDDF42;
+  border-radius: 15px;
+  border: none;
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  font-family: Arial, serif;
+}
+.mainTable{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .table{
   background: rgba(39, 82, 100, 0.5);
   backdrop-filter: blur(6px);
   border-radius: 15px;
   border-collapse:collapse;
-  width: 80%;
-  height: 500px;
+  width: 90%;
   text-align: center;
   color: #ffffff;
   font-family: 'Arial', serif;

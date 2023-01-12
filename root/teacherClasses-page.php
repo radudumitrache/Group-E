@@ -1,3 +1,12 @@
+<?php
+
+  require_once("connection.php");
+  global $connectionExeption;
+  global $conn;
+
+  session_start();
+
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -44,80 +53,151 @@
 
     <div class="mainHeader">
 
-      <a class="button3" href="teacherProfile-page.php">
-        <button>Profile</button>
-      </a>
+      <div id="btclass">
+        <a class="button3" href="teacherProfile-page.php">
+          <button>Profile</button>
+        </a>
+        <a class="button3" href="teacherAbsentces-page.php">
+          <button>Absences</button>
+        </a>
+      </div>
 
       <h1>Classes</h1>
 
       <img src="img/teacherClass.svg" alt="">
 
     </div>
-    <div class="mainTable">
 
-      <table class="table">
-          <tr>
-            <th>Classes</th>
-            <th>Students</th>
-            <th>Scores</th>
-            <th>Notes</th>
-          </tr>
-          <tr>
-            <td>A1</td>
-            <td>Radu</td>
-            <td>5</td>
-            <td>He was sick on december</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+      <div class="forms">
 
-      </table>
+        <form action="studentContactPhp.php" method="POST" class="form1">
 
-      <div class="buttonAbsences">
-        <button><a href="teacherAbsentces-page.php">Absences</a></button>
-        <button><a href="">Absences</a></button>
-        <button><a href="">Absences</a></button>
-        <button><a href="">Absences</a></button>
-        <button><a href="">Absences</a></button>
-        <button><a href="">Absences</a></button>
-      </div>
-      <div class="buttonContact">
-        <button><a href="parentProfile-page.php">Contact</a></button>
-        <button><a href="">Contact</a></button>
-        <button><a href="">Contact</a></button>
-        <button><a href="">Contact</a></button>
-        <button><a href="">Contact</a></button>
-        <button><a href="">Contact</a></button>
+          <label for="">Student ID
+            <input type="number" name="studentId" class="studentId">
+          </label>
+
+          <input type="submit" value="Contact" class="submits">
+
+        </form>
+
+        <form action="studentAddPhp.php" method="POST" class="form2">
+
+          <h2>Notes</h2>
+
+          <label for="">Student ID
+            <input type="number" name="studentId" class="studentId">
+          </label>
+
+          <label for="">Class
+            <input type="text" name="classId" class="studentId">
+          </label>
+
+          <label for="">Notes
+            <input type="text" name="notes" class="notes">
+          </label>
+
+          <input type="submit" value="Change" class="submits">
+
+        </form>
+
+        <form action="scoreAddPhp.php" method="POST" class="form3">
+
+          <h2>Scores</h2>
+
+          <label for="">Student ID
+              <input type="number" name="studentId" class="studentId">
+            </label>
+
+            <label for="">Class
+              <input type="text" name="classId" class="studentId">
+            </label>
+
+            <label for="">Score
+              <input type="text" name="scores" class="studentId">
+            </label>
+
+            <input type="submit" value="Change" class="submits">
+
+        </form>
+
       </div>
 
+      <div class="mainTable">
+
+        <?php
+                
+          $error = [];
+          $isConnect= require_once("connection.php");
+          global $connectionExeption;
+          global $conn; 
+
+          if($_SERVER['REQUEST_METHOD'] == 'POST'){
+              $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+              $stmt = $conn->prepare('DELETE FROM students WHERE students.studentID = :id');
+              $stmt->bindParam('id', $id, PDO::PARAM_STR);
+              $stmt->execute();
+          }
+      
+              if($connectionExeption == ""){
+      
+                  if($isConnect){
+
+                          $stmt = $conn->prepare("SELECT students.studentID, classID, name, score, exams.notes
+                                                  FROM students, students_exams, exams
+                                                  WHERE students.studentID = students_exams.studentID
+                                                  AND students_exams.examID = exams.examID");
+                          $stmt->execute();
+                          $table = $stmt->setFetchMode(PDO::FETCH_OBJ); 
+
+                          if($stmt->rowCount() >= 1){
+
+                              echo "<table class='table'>";
+
+                              echo "<tr>
+                                      <th>Students</th>
+                                      <th>Student ID</th>
+                                      <th>Classes</th>
+                                      <th>Scores</th>
+                                      <th>Notes</th>
+                                      <th>Remove</th>
+                                  </tr>";
+
+                              foreach($stmt->fetchall() as $tables){
+
+                                  echo "<form action='teacherClasses-page.php' method='POST' class='form'>" .
+                                          "<input type='hidden' name='id' value='$tables->studentID'>" . 
+                                          "<tr>"
+                                              ."<td>" . $tables->name . "</td>"
+                                              ."<td>" . $tables->studentID . "</td>"
+                                              ."<td>" . $tables->classID . "</td>"
+                                              ."<td>" . $tables->score . "</td>"
+                                              ."<td>" . $tables->notes . "</td>"
+                                              ."<td><button type='submit'>Remove</button></td>"
+                                        . "</tr>" .
+                                      '</form>';
+
+                                  if(!empty($tables->id)){
+                                  $ids[] = $tables->id;  
+                                  }   
+                              }
+                              if(isset($ids)){
+                                  $_SESSION["id"] = $ids;
+                              }
+
+                              echo "</table>";
+
+                          }else{
+                              echo '<h2 class="errors"> There is no data in table</h2>';
+                              unset($_SESSION["id"]);
+                          }
+
+                      }
+
+                  }
+                    
+        ?>
+
+      </div>
     </div>
 
   </main>
