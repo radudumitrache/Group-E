@@ -97,14 +97,29 @@ main {
 	border-radius: 15px;
 	color: #ffffff;
 	grid-column: 2/12;
+	height: 800px;
 	margin: 5%;
 	padding: 5%;
 }
 
-img {
-	width: 100%;
+#eventImg {
+  position: relative;
+  left: 7%;
+  border-radius: 15px;
 }
 
-p {
-	margin: 50px;
+#eventImg img{
+  max-width: 85%;
+  width:85%;
+  width:expression(document.body.clientwidth>85?”85%”:”auto”);
+  overflow:hidden;
+}
+
+.mainContent {
+	position: relative;
+    top: 1%;
+    left: 4%;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 3%;
 }

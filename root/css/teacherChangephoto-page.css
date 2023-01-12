@@ -78,6 +78,22 @@ main{
   row-gap: 30px;
 }
 
+.textSettings{
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.backbutton img{
+  width: 50px;
+}
+
+.backbutton{
+  position: relative;
+  top: -43%;
+  left: -15%;
+}
+
 .image{
   max-width:150px;
   width:150px;
@@ -85,10 +101,18 @@ main{
   overflow:hidden;
 }
 
-.textSettings{
-  font-family: 'Arial';
-  font-style: normal;
-  font-weight: 400;
+input[type="submit"]{
+  background-color: #FDDF42;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  white-space:nowrap;
+  width: 100px;
+  height: 30px;
+  border: none;
+  text-decoration: none;
+  color: black;
+  border-radius: 15px;
 }
 
 main > div > a{

@@ -1,3 +1,25 @@
+<?php session_start();?>
+
+<?php
+        include("dbLink.php");
+
+        try{
+          //$stmt = $dbHandler -> prepare("SELECT events_school.photo, events_school.date, events_school.description FROM events_school ORDER BY eventID DESC LIMIT 1,1");
+          $stmt = $dbHandler -> prepare("SELECT events_school.photo, events_school.event_date, events_school.event_description FROM events_school ORDER BY eventID DESC LIMIT 1,1");
+          $stmt->execute();
+          $stmt->bindColumn(1, $photo);
+          $stmt->bindColumn(2, $date);
+          $stmt->bindColumn(3,$description);
+
+           while ($resule = $stmt->fetch()) {
+            $_SESSION["date"] = $date;
+            $_SESSION["description"] = $description;
+          }
+         }
+        catch(Exception $ex){
+          echo $ex;
+        }
+      ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -31,8 +53,12 @@
 			</div>
 		</header>
 		<main>
-			<img src="../root/img/event-2.png" alt="Event 2">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</main>
+			<div id= "eventImg" >
+				<img src="uploade/<?php echo $photo; ?>" title="eventImg" alt="Event 1">
+			</div>
+			<div class="mainContent">
+				<p><?php echo "Date:$date";?></p>
+				<p><?php echo $description;?></p>
+			</div>
 	</body>
 </html>
