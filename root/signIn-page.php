@@ -1,3 +1,103 @@
+<?php
+  session_start();
+  include("databaseConnect.php");
+  $sql="SELECT `userID`,`email_address`,`password`,`role` FROM `users`";
+  $stm=$dbhandler->query($sql);
+  $accounts=$stm->fetchall(PDO::FETCH_ASSOC);
+  
+  if ($_SERVER["REQUEST_METHOD"]=="POST")
+  {
+    $email=filter_input(INPUT_POST,"email",FILTER_VALIDATE_EMAIL);
+    $pass=filter_input(INPUT_POST,"password",FILTER_SANITIZE_SPECIAL_CHARS);
+   if (strlen($email)!=0)
+   {
+    foreach ($accounts as $account)
+    {
+      if ($account["email_address"]==$email)
+      {
+          $_SESSION["user"]=$account;
+          break;
+      }
+    }
+    if (isset($_SESSION["user"]))
+    {
+     
+      if ($_SESSION["user"]["password"]==$pass)
+        {
+          if ($_SESSION["user"]["role"]=="parent")
+            { 
+              $sql="SELECT parentID FROM parents where userID=:id";
+              $stmt=null;
+              try
+              {
+                $stmt=$dbhandler->prepare($sql);
+                $stmt->bindParam(":id",$_SESSION["user"]["userID"],PDO::PARAM_INT);
+                $stmt->execute();
+              }
+              catch (Exception $e)
+              {
+                $message=$e->getMessage();
+                echo "<script>alert('Something went wrong ->$message')</script>";
+              }
+              if (isset($stmt))
+              {
+                if ($stmt->rowCount()==1)
+                {
+                    $rez=$stmt->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION["parentID"]=$rez["parentID"];
+                   
+                }
+                else
+                {
+                  echo "<script>alert('Error Database not correct')</script>";
+                }
+              }
+              header("Location: parentMain-page.php");
+            }
+          else if($_SESSION["user"]["role"]=="teacher")
+            {
+              $sql="SELECT teacherID FROM teachers where userID=:id";
+              $stmt=null;
+              try
+              {
+                $stmt=$dbhandler->prepare($sql);
+                $stmt->bindParam(":id",$_SESSION["user"]["userID"],PDO::PARAM_INT);
+                $stmt->execute();
+              }
+              catch (Exception $e)
+              {
+                $message=$e->getMessage();
+                echo "<script>alert('Something went wrong ->$message')</script>";
+              }
+              if (isset($stmt))
+              {
+                if ($stmt->rowCount()==1)
+                {
+                    $rez=$stmt->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION["teacherID"]=$rez["teacherID"];
+                  
+                }
+                else
+                {
+                  echo "<script>alert('Error Database not correct')</script>";
+                }
+              }
+              header("Location: teacherMain_page.php");
+            }
+          else if ($_SESSION["user"]["role"]=="admin")
+            header("Location: ");
+        }
+      else
+        echo "<script>alert('Wrong password')</script>";
+    }
+    
+   }
+   else
+    echo "<script>alert('Invalid email')</script>";
+    
+  }
+
+  ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -45,11 +145,12 @@
   </div>
 
 </header>
+<main>
+  <form method="post">
 
-  <form method="post" action="<?php html_entity_decode ($_SERVER['PHP_SELF'])?>" >
     <h1>Sign in</h1>
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email">
     <label for="password">Password</label>
     <input type="text" id="password" name="password">
     <div id="footerInfo">
@@ -57,8 +158,6 @@
       <input type="submit" id="submit" name="submit" value="Sign In">    
     </div>
   </form>
-
-
-
+</main>
 </body>
 </html>
