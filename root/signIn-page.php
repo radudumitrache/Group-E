@@ -75,7 +75,6 @@
                 {
                     $rez=$stmt->fetch(PDO::FETCH_ASSOC);
                     $_SESSION["teacherID"]=$rez["teacherID"];
-                  
                 }
                 else
                 {
