@@ -97,7 +97,7 @@
 
   </header>
 
-  <form class="main" action='studentInfo-page.php' method='POST' enctype="multipart/form-data">
+  <form class="main" action='studentinfoChange-page.php' method='POST' enctype="multipart/form-data">
 
     <h1 id="form_title">Admin</h1>
 
