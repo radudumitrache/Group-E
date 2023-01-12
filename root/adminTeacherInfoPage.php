@@ -89,7 +89,7 @@
               <th>Class</th>
               <th>Phone</th>
               <th>E-mail</th>
-              <th id="RemoveTh">Remove</th>
+              <th class="LeftTds">Remove</th>
             </tr>
            <?php
                 $sql="SELECT teachers.teacherID,user_name,classID,telephone_number,users.email_address FROM teachers,users,classes WHERE teachers.userID=users.userID AND teachers.teacherID=classes.teacherID";
@@ -115,12 +115,12 @@
                         $classID=$row["classID"];
                         $telephone=$row["telephone_number"];
                         $email=$row["email_address"];
-                        echo "<td>$teacherID</td>
-                              <td>$teacher_name</td>
-                              <td>$classID</td>
-                              <td>$telephone</td>
-                              <td>$email</td>                 
-                              <td><a href='adminTeacherInfoPage.php?id=$teacherID'><button>Remove</button></td>
+                        echo "<td class='RightTds' id='BottomRow'>$teacherID</td>
+                              <td id='BottomRow'>$teacher_name</td>
+                              <td id='BottomRow'>$classID</td>
+                              <td id='BottomRow'>$telephone</td>
+                              <td id='BottomRow'>$email</td>                 
+                              <td class='LeftTds' id='BottomRow'><a href='adminTeacherInfoPage.php?id=$teacherID'><button>Remove</button></td>
                                 ";
                         
                         echo "</tr>";
