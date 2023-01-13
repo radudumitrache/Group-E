@@ -1,16 +1,19 @@
 <?php
-    include("connection.php");
+    include("databaseConnect.php");
     if (isset($_GET["id"]))
     {
         
         $id=filter_input(INPUT_GET,"id",FILTER_SANITIZE_NUMBER_INT);
-        $sql="DELETE FROM classes WHERE teacherID=:id;
-              DELETE FROM subjects WHERE teacherID=:id;
-              DELETE FROM teachers,users FROM teachers,users where teachers.userID=users.userID AND teachers.teacherID= :id";
+        $sql="DELETE FROM parents_students where parents_students.studentID= :id;
+              DELETE FROM students_exams where students_exams.studentID= :id;
+              DELETE FROM events_school_students where events_school_students.student_id= :id;
+              DELETE FROM students where students.student_id= :id; 
+
+        ";
         $stmt=null;
         try
         {
-            $stmt=$conn->prepare($sql);
+            $stmt=$dbhandler->prepare($sql);
             $stmt->bindParam(":id",$id,PDO::PARAM_INT);
             $stmt->execute();
         }
@@ -22,7 +25,7 @@
         {
             $_GET=null;
             $id=0;
-            header("Location: adminTeacherInfoPage.php");
+            header("Location: adminStudentInfo-page.php");
         }
         else
         {
@@ -44,7 +47,7 @@
   <meta name="author" content="Yourname">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morgenster</title>
-  <link rel="stylesheet" href="css/adminTeacherInfoPage.css">
+  <link rel="stylesheet" href="css/adminStudentInfo-page.css">
   <link rel="icon" href="img/logo.svg">
 
 </head>
@@ -84,19 +87,20 @@
       <div class="MainBox">
         <table class="table">
             <tr>
-              <th>Teacher ID</th>
+              <th>Student ID</th>
               <th>Name</th>
-              <th>Class</th>
-              <th>Phone</th>
-              <th>E-mail</th>
+              <th>Parent</th>
+              <th>Phone number</th>
+              <th>Email</th>
               <th class="LeftTds">Remove</th>
             </tr>
            <?php
-                $sql="SELECT teachers.teacherID,user_name,classID,telephone_number,users.email_address FROM teachers,users,classes WHERE teachers.userID=users.userID AND teachers.teacherID=classes.teacherID";
+                $sql="SELECT students.studentID,students.student_name,users.user_name,users.telephone_number,users.email_address
+                 FROM students,users,parents,parents_students WHERE users.userID=parents.userID AND parents.parentID=parents_students.parentID AND parents_students.studentID=students.studentID";
                 $stmt=null;
                 try
                 {
-                    $stmt=$conn->prepare($sql);
+                    $stmt=$dbhandler->prepare($sql);
                     $stmt->execute();
                     
                 }
@@ -110,17 +114,18 @@
                     foreach ($rez as $row)
                     {
                         echo "<tr>";
-                        $teacherID=$row["teacherID"];
-                        $teacher_name=$row["user_name"];
-                        $classID=$row["classID"];
-                        $telephone=$row["telephone_number"];
+                        $studentID=$row["studentID"];
+                        $student_name=$row["student_name"];
+                        $parent_name=$row["user_name"];
+                        $telephone_number=$row["telephone_number"];
                         $email=$row["email_address"];
-                        echo "<td class='RightTds' id='BottomRow'>$teacherID</td>
-                              <td id='BottomRow'>$teacher_name</td>
-                              <td id='BottomRow'>$classID</td>
-                              <td id='BottomRow'>$telephone</td>
+                        
+                        echo "<td class='RightTds' id='BottomRow'>$studentID</td>
+                              <td id='BottomRow'>$student_name</td>
+                              <td id='BottomRow'>$parent_name</td>
+                              <td id='BottomRow'>$telephone_number</td>
                               <td id='BottomRow'>$email</td>                 
-                              <td class='LeftTds' id='BottomRow'><a href='adminTeacherInfoPage.php?id=$teacherID'><button>Remove</button></td>
+                              <td class='LeftTds' id='BottomRow'><a href='adminTeacherInfoPage.php?id=$studentID'><button>Remove</button></td>
                                 ";
                         
                         echo "</tr>";

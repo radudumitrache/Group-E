@@ -84,7 +84,7 @@
               header("Location:teacherMain_page.php");
             }
           else if ($_SESSION["user"]["role"]=="admin")
-            header("Location: ");
+            header("Location: adminMain-page.php");
         }
       else
         echo "<script>alert('Wrong password')</script>";
