@@ -56,11 +56,13 @@
               <th id="MessagesTh">Messages</th>
             </tr>
            <?php
+             include("connection.php");
+
               $sql="SELECT `classID`,'parent_notes','studentID','studentName' FROM 'Messages' where 'teacherID' = :userID";
               $stmt=null;
               try
               {
-                $stmt=$dbhandler->prepare($sql);
+                $stmt=$conn->prepare($sql);
                 if (isset($_SESSION["teacherID"]))
                   $stmt->bindParam(":userID",$_SESSION["teacherID"],PDO::PARAM_INT);
                 else 
@@ -75,7 +77,8 @@
               if (isset($stmt))
               {
                 $rez=$stmt->fetchall(PDO::FETCH_ASSOC);
-                for (int i=0;i<$stmt->rowCount()-1;i++)
+
+                for ($i=0; $i<$stmt->rowCount()-1; $i++)
                 {
                   $classID=$rez[$i]["classID"];
                   $parent_notes=$rez[$i]["parent_notes"];

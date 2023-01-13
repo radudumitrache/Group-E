@@ -1,7 +1,7 @@
 <?php session_start();?>
 
 <?php
-        include("dbLink.php");
+        include("connection.php");
 
        // get the userid
         $userID = $_SESSION["user"]["userID"];
@@ -9,7 +9,7 @@
 
         try{
           //$stmt = $dbHandler -> prepare("SELECT photo, telephone_number, email_address FROM users where userID = $userID");
-          $stmt = $dbHandler -> prepare("SELECT user_photo, telephone_number, email_address FROM users where userID = $userID");
+          $stmt = $conn -> prepare("SELECT user_photo, telephone_number, email_address FROM users where userID = $userID");
           $stmt->execute();
           $stmt->bindColumn(1, $photo);
           $stmt->bindColumn(2, $phone);
@@ -21,8 +21,8 @@
             $_SESSION["email"] = $email;
           }
         }
-        catch(Exception $ex){
-          echo $ex;
+        catch(Exception $e){
+          echo $e;
         }
       ?>
 
@@ -39,7 +39,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Morgenster</title>
-  <link rel="stylesheet" href="css/teacherProfilepage.css">
+  <link rel="stylesheet" href="css/teacherProfile-page.css">
   <link rel="icon" href="img/logo.svg">
 
 </head>

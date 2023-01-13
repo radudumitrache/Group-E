@@ -1,7 +1,7 @@
 <?php session_start();?>
 
 <?php
-  include("dbLink.php");
+  include("connection.php");
 
   // get the userid
   $userID = $_SESSION["user"]["userID"];
@@ -9,7 +9,7 @@
 
   try{
     //$stmt = $dbHandler -> prepare("SELECT photo, telephone_number, email_address FROM users where userID = $userID");
-    $stmt = $dbHandler -> prepare("SELECT user_photo, telephone_number, email_address FROM users where userID = $userID");
+    $stmt = $conn -> prepare("SELECT user_photo, telephone_number, email_address FROM users where userID = $userID");
     $stmt->execute();
     $stmt->bindColumn(1, $photo);
     $stmt->bindColumn(2, $phone);
@@ -21,8 +21,8 @@
       $_SESSION["email"] = $email;
     }
   }
-  catch(Exception $ex){
-    echo $ex;
+  catch(Exception $e){
+    echo $e;
   }
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -43,20 +43,20 @@
         // if move file success, insert data to database
         if ($rs) {
           //$stmt = $dbHandler -> prepare("UPDATE users SET photo = :newImg WHERE userID = $userID");
-          $stmt = $dbHandler -> prepare("UPDATE users SET user_photo = :newImg WHERE userID = $userID");
+          $stmt = $conn -> prepare("UPDATE users SET user_photo = :newImg WHERE userID = $userID");
           
           $stmt->bindParam(":newImg", $image, PDO::PARAM_STR);
           $stmt ->execute();
           $stmt ->rowCount();
-          $dbHandler = NULL;
+          $conn = NULL;
           $photo = $image;
         } else {
           echo "Upload photo fail!";
         }
         
       }
-      catch(Exception $ex){
-        echo $ex;
+      catch(Exception $e){
+        echo $e;
       }
     }
   }

@@ -6,7 +6,7 @@
     $dsn="mysql:host=$host;dbname=$dbname;charset=utf8";
     try
     {
-        $dbhandler= new PDO($dsn,$user,$password);
+        $conn= new PDO($dsn,$user,$password);
     }
     catch (Exception $e)
     {

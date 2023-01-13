@@ -1,7 +1,7 @@
 <?php session_start();?>
 
 <?php
-  include("dbLink.php");
+  include("connection.php");
   include("testStudentinfo.php");
   
   if (empty($err) AND $_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,7 +21,7 @@
 
       // select all parents
       $sql = "SELECT userID FROM parents LEFT JOIN parents_students on parents_students.parentID = parents.parentID where studentID = {$dis_studenID}";
-      $stmt = $dbHandler->prepare($sql);
+      $stmt = $conn->prepare($sql);
       $stmt->execute();
       $results = $stmt->fetchAll();
       if (count($results) == 0) {
@@ -35,20 +35,20 @@
 
         $userID = $res["userID"];
         $sql = "UPDATE users SET email_address = :email, telephone_number = :phone, address = :address WHERE userID = $userID";
-        $stmt = $dbHandler->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         $stmt->bindParam(":phone", $phones[$i], PDO::PARAM_STR);
         $stmt->bindParam(":email", $emails[$i], PDO::PARAM_STR);
         $stmt->bindParam(":address", $dis_address, PDO::PARAM_STR);
         $stmt->execute();
       }
-    } catch(Exception $ex) {
-      $err[] = $ex->getMessage();
+    } catch(Exception $e) {
+      $err[] = $e->getMessage();
     }
   }
 
-  if(!empty($err)){
-    foreach ($err as $i) {
+  if(!empty($e)){
+    foreach ($e as $i) {
       echo $i;
       echo "<br>";
     }

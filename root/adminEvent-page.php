@@ -1,12 +1,12 @@
 <?php session_start();?>
 
  <?php
-    include("databaseConnect.php");
+    include("connection.php");
 
     include("testEvent.php");
 
-      if(!empty($err)){
-        foreach ($err as $i) {
+      if(!empty($e)){
+        foreach ($e as $i) {
           echo $i;
           echo "<br>";
         }
@@ -30,7 +30,7 @@
           // if move file success, insert data to database
           if ($rs) {
             //$stmt = $dbHandler -> prepare("INSERT INTO events_school (name, photo, events_school.description, events_school.date) VALUES (:eventName, :eventImage, :eventDescribe, :eventDate)");
-            $stmt = $dbhandler -> prepare("INSERT INTO events_school (event_name, event_photo, events_school.event_description, events_school.event_date) VALUES (:eventName, :eventImage, :eventDescribe, :eventDate)");
+            $stmt = $conn -> prepare("INSERT INTO events_school (event_name, event_photo, events_school.event_description, events_school.event_date) VALUES (:eventName, :eventImage, :eventDescribe, :eventDate)");
 
             $stmt->bindParam(":eventName", $eventName, PDO::PARAM_STR);
             $stmt->bindParam(":eventImage", $eventImage, PDO::PARAM_STR);
@@ -39,7 +39,7 @@
 
             $stmt ->execute();
             $stmt ->rowCount();
-            $dbhandler = NULL;
+            $conn = NULL;
           }
           
         }

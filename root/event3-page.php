@@ -1,11 +1,11 @@
 <?php session_start();?>
 
 <?php
-        include("databaseConnect.php");
+        include("connection.php");
 
         try{
           //$stmt = $dbHandler -> prepare("SELECT events_school.photo, events_school.date, events_school.description FROM events_school ORDER BY eventID DESC LIMIT 2,1");
-          $stmt = $dbhandler -> prepare("SELECT events_school.photo, events_school.event_date, events_school.event_description FROM events_school ORDER BY eventID DESC LIMIT 2,1");
+          $stmt = $conn -> prepare("SELECT events_school.photo, events_school.event_date, events_school.event_description FROM events_school ORDER BY eventID DESC LIMIT 2,1");
           $stmt->execute();
           $stmt->bindColumn(1, $photo);
           $stmt->bindColumn(2, $date);
@@ -16,8 +16,8 @@
             $_SESSION["description"] = $description;
           }
          }
-        catch(Exception $ex){
-          echo $ex;
+        catch(Exception $e){
+          echo $e;
         }
       ?>
 

@@ -1,8 +1,8 @@
 <?php
   session_start();
-  include("databaseConnect.php");
+  include("connection.php");
   $sql="SELECT `userID`,`email_address`,`password`,`role` FROM `users`";
-  $stm=$dbhandler->query($sql);
+  $stm=$conn->query($sql);
   $accounts=$stm->fetchall(PDO::FETCH_ASSOC);
   
   if ($_SERVER["REQUEST_METHOD"]=="POST")
@@ -30,7 +30,7 @@
               $stmt=null;
               try
               {
-                $stmt=$dbhandler->prepare($sql);
+                $stmt=$conn->prepare($sql);
                 $stmt->bindParam(":id",$_SESSION["user"]["userID"],PDO::PARAM_INT);
                 $stmt->execute();
               }
@@ -52,7 +52,7 @@
                   echo "<script>alert('Error Database not correct')</script>";
                 }
               }
-              header("Location: parentMain-page.php");
+              header("Location:parentMain-page.php");
             }
           else if($_SESSION["user"]["role"]=="teacher")
             {
@@ -60,7 +60,7 @@
               $stmt=null;
               try
               {
-                $stmt=$dbhandler->prepare($sql);
+                $stmt=$conn->prepare($sql);
                 $stmt->bindParam(":id",$_SESSION["user"]["userID"],PDO::PARAM_INT);
                 $stmt->execute();
               }
@@ -81,7 +81,7 @@
                   echo "<script>alert('Error Database not correct')</script>";
                 }
               }
-              header("Location: teacherMain_page.php");
+              header("Location:teacherMain_page.php");
             }
           else if ($_SESSION["user"]["role"]=="admin")
             header("Location: ");

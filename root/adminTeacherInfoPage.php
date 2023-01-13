@@ -1,5 +1,5 @@
 <?php
-    include("databaseConnect.php");
+    include("connection.php");
     if (isset($_GET["id"]))
     {
         
@@ -10,7 +10,7 @@
         $stmt=null;
         try
         {
-            $stmt=$dbhandler->prepare($sql);
+            $stmt=$conn->prepare($sql);
             $stmt->bindParam(":id",$id,PDO::PARAM_INT);
             $stmt->execute();
         }
@@ -96,7 +96,7 @@
                 $stmt=null;
                 try
                 {
-                    $stmt=$dbhandler->prepare($sql);
+                    $stmt=$conn->prepare($sql);
                     $stmt->execute();
                     
                 }
