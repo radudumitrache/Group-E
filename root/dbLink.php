@@ -1,6 +1,6 @@
 <?php
     $host="mysql";
-    $dbname="projectE";
+    $dbname="morgenster";
     $user="root";
     $password="qwerty";
     $db="mysql:host=$host;dbname=$dbname;charset=utf8";

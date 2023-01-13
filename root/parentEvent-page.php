@@ -41,18 +41,45 @@
         </a>
 
         <div class="firstEvent">
-            <img src="img/eventphoto.jpg">
-            <div>
-                <h3>Trip to Amsterdam</h3>
-                <p>Lorem Ipsum</p>
-            </div>
+            
+            <?php
+                function scan_dir($dir) {
+                    $ignored = array('.', '..', '.svn', '.htaccess');
+                
+                    $files = array();    
+                    foreach (scandir($dir) as $file) {
+                        if (in_array($file, $ignored)) continue;
+                        $files[$file] = filemtime($dir . '/' . $file);
+                    }
+                
+                    arsort($files);
+                    $files = array_keys($files);
+                
+                    return ($files) ? $files : false;
+                }
+                $file='img/upload/event_parent_1';
+                $images=scan_dir($file);
+                echo "<img src='img/upload/event_parent_1/$images[0]'>";
+                $myfile=fopen("description/description1.txt","r") or die("file error encountered");
+                $description=fread($myfile,filesize("description/description1.txt"));
+                echo "<div>
+                        <h3>First event of the day</h3>
+                        <p>$description</p>
+                     </div>";
+            ?>
         </div>
         <div class="firstEvent">
-            <img src="img/eventphoto.jpg">
-            <div>
-                <h3>Trip to Amsterdam</h3>
-                <p>Lorem Ipsum</p>
-            </div>
+        <?php
+                $file='img/upload/event_parent_2';
+                $images=scan_dir($file);
+                echo "<img src='img/upload/event_parent_2/$images[0]'>";
+                $myfile=fopen("description/description2.txt","r") or die("file error encountered");
+                $description=fread($myfile,filesize("description/description2.txt"));
+                echo "<div>
+                        <h3>Second event of the day</h3>
+                        <p>$description</p>
+                     </div>";
+            ?>
         </div>
     </div>
 </main>
