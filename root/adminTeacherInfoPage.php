@@ -56,7 +56,7 @@
     <header>
 
       <div>
-        <a class="logo" href="home-page.php">
+        <a class="logo" href="index.php">
           <img src="img/logo.svg" alt="logo">
         </a>
       </div>
@@ -64,7 +64,7 @@
       <div class="listContainer">
         <ul class="headerList">
           <li>
-            <a class="button1" href="home-page.php">
+            <a class="button1" href="index.php">
               <button>SignOut</button>
             </a>
           </li>
@@ -76,7 +76,7 @@
     <main>
 
       <div id="mainContent">
-        <div class="button1" ><a href="home-page.php"><button>Main Page</button></a></div>
+        <div class="button1" ><a href="index.php"><button>Main Page</button></a></div>
         <h1 class="textSettings">Admin</h1>
         <div class="button1"><a href="adminStudentInfo-page.php"><button>Student works</button></a></div>
       </div>

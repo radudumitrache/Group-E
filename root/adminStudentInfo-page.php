@@ -59,7 +59,7 @@
     <header>
 
       <div>
-        <a class="logo" href="home-page.php">
+        <a class="logo" href="index.php">
           <img src="img/logo.svg" alt="logo">
         </a>
       </div>
@@ -67,7 +67,7 @@
       <div class="listContainer">
         <ul class="headerList">
           <li>
-            <a class="button1" href="home-page.php">
+            <a class="button1" href="index.php">
               <button>SignOut</button>
             </a>
           </li>

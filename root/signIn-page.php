@@ -129,7 +129,7 @@
     <ul class="headerList">
 
       <li>
-        <a class="button1" href="home-page.php">
+        <a class="button1" href="index.php">
           <button>Home</button>
         </a>
       </li>

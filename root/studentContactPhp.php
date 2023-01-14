@@ -29,7 +29,7 @@ global $conn;
     <header>
 
       <div>
-        <a class="logo" href="home-page.php">
+        <a class="logo" href="index.php">
           <img src="img/logo.svg" alt="logo">
         </a>
       </div>

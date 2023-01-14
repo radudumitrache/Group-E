@@ -30,7 +30,7 @@
     <ul class="headerList">
 
       <li>
-        <a class="button2" href="home-page.php">
+        <a class="button2" href="index.php">
           <button>Home</button>
         </a>
       </li>
