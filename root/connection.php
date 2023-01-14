@@ -15,5 +15,5 @@
         echo $e->getMessage();
         die();
     }
-
+    echo "test";
 ?>
