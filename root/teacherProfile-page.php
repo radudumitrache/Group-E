@@ -5,8 +5,10 @@
 
        // get the userid
         $userID = $_SESSION["user"]["userID"];
+        //$userID = 1001;
 
         try{
+          //$stmt = $dbHandler -> prepare("SELECT photo, telephone_number, email_address FROM users where userID = $userID");
           $stmt = $conn -> prepare("SELECT user_photo, telephone_number, email_address FROM users where userID = $userID");
           $stmt->execute();
           $stmt->bindColumn(1, $photo);
@@ -73,7 +75,7 @@
           <a class="textSettings" href="teacherChangephoto-page.php">Change profile photo</a>
           <h3 class="textSettings"><?php echo "Phone number:$phone";?></h3>
           <h3 class="textSettings"><?php echo "E-mail:$email";?> </h3>
-          <div class="button1" href="teacherClasses-page.php"><button>Classes</button></div>
+          <a class="button1" href="teacherClasses-page.php"><button>Classes</button></a>
 
       </div>
 

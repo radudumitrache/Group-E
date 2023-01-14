@@ -117,16 +117,6 @@
 
       </div>
 
-<<<<<<< HEAD
-      <div class="listContainer">
-        <ul class="headerList">
-          <li>
-            <a class="button1" href="signIn-page.php">
-              <button>SignOut</button>
-            </a>
-          </li>
-        </ul>
-=======
       <div class="mainTable">
 
         <?php
@@ -152,7 +142,7 @@
       
                   if($isConnect){
 
-                          $stmt = $conn->prepare("SELECT studentID, date,  notes
+                          $stmt = $conn->prepare("SELECT studentID, absence_date, justification
                                                   FROM absences");
                           $stmt->execute();
                           $table = $stmt->setFetchMode(PDO::FETCH_OBJ); 
@@ -201,76 +191,10 @@
                   }
                     
         ?>
-
->>>>>>> 4f64b5ecf94fa58c765879d71c66a0382d8de62c
       </div>
     </div>
 
   </main>
-
-<<<<<<< HEAD
-    <main>
-
-      <div id="mainContent">
-        <div class="button1" href="teacherAbsencespage.php"><button>Profile</button></div>
-        <h1 class="textSettings">Absences</h1>
-        <img src="img/teacherImg.svg" title="teacherImg" alt="teacherImg">
-      </div>
-
-      <div class="MainBox">
-        <table class="table">
-            <tr>
-              <th>Students</th>
-              <th>Date</th>
-              <th id="NotesTh">Notes</th>
-				    </tr>
-				    <tr>
-              <td class="RightTds">1</td>
-              <td></td>
-              <td class="LeftTds"></td>
-            </tr>
-            <tr>
-              <td class="RightTds">2</td>
-              <td></td>
-              <td class="LeftTds"></td>
-            </tr>
-            <tr>
-              <td class="RightTds">3</td>
-              <td></td>
-              <td class="LeftTds"></td>
-            </tr>
-            <tr>
-              <td class="RightTds">4</td>
-              <td></td>
-              <td class="LeftTds"></td>
-            </tr>
-            <tr>
-              <td class="RightTds">5</td>
-              <td></td>
-            <td class="LeftTds"></td>
-            </tr>
-            <tr>
-              <td class="RightTds">6</td>
-              <td></td>
-              <td class="LeftTds"></td>
-            </tr>
-            <tr>
-              <td class="RightTds">7</td>
-              <td></td>
-              <td class="LeftTds"></td>
-            </tr>
-            <tr>
-              <td class="RightTds" id="BottomRow">8</td>
-              <td id="BottomRow"></td>
-              <td class="LeftTds" id="BottomRow"></td>
-            </tr>
-        </table>
-      </div>
-    </main>
-  </div>
-=======
->>>>>>> 4f64b5ecf94fa58c765879d71c66a0382d8de62c
-
 
 </body>
 </html>

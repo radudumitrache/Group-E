@@ -132,7 +132,7 @@
           </form>
           <h3 class="textSettings"><?php echo "Phone number:$phone";?></h3>
           <h3 class="textSettings"><?php echo "E-mail:$email";?> </h3>
-          <div class="button1" href="teacherClasses-page.php"><button>Classes</button></div>
+          <a class="button1" href="teacherClasses-page.php"><button>Classes</button></a>
 
       </div>
 

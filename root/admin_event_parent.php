@@ -1,5 +1,8 @@
 <?php
+    include ("dblink.php");
+
     $err = [];
+
     if(isset($_POST['submitPic1'])){
         if (!isset($_FILES['eventImage1']) || !$_FILES["eventImage1"]['size']) {
             $err[] = "Forgot photo!";

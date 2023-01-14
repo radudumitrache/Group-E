@@ -81,7 +81,7 @@
                   echo "<script>alert('Error Database not correct')</script>";
                 }
               }
-              header("Location:teacherMain_page.php");
+              header("Location:teacherMain-page.php");
             }
           else if ($_SESSION["user"]["role"]=="admin")
             header("Location: adminMain-page.php");

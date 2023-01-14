@@ -4,15 +4,16 @@
         include("connection.php");
 
         try{
-          $stmt = $conn -> prepare("SELECT events_school.photo, events_school.event_date, events_school.event_description FROM events_school ORDER BY eventID DESC LIMIT 0,1");
+          //$stmt = $dbHandler -> prepare("SELECT events_school.photo, events_school.date, events_school.description FROM events_school ORDER BY eventID DESC LIMIT 0,1");
+          $stmt = $conn -> prepare("SELECT events_school.photo, events_school.event_date, events_school.event_description FROM events_school WHERE eventID = 1 ORDER BY eventID DESC LIMIT 0,1");
           $stmt->execute();
-          $stmt->bindColumn(1, $photo);
-          $stmt->bindColumn(2, $date);
-          $stmt->bindColumn(3,$description);
+          $stmt->bindColumn(1, $photo1);
+          $stmt->bindColumn(2, $date1);
+          $stmt->bindColumn(3,$description1);
 
            while ($resule = $stmt->fetch()) {
-            $_SESSION["date"] = $date;
-            $_SESSION["description"] = $description;
+            $_SESSION["date"] = $date1;
+            $_SESSION["description"] = $description1;
           }
          }
         catch(Exception $e){
@@ -53,12 +54,13 @@
 		</header>
 		<main>
 			<div id= "eventImg" >
-				<img src="uploade/<?php echo $photo; ?>" title="eventImg" alt="Event 1">
+				<img src="uploade/<?php echo $photo1; ?>" title="eventImg" alt="Event 1">
 			</div>
 			<div class="mainContent">
-				<p><?php echo "Date:$date";?></p>
-				<p><?php echo $description;?></p>
+				<p><?php echo "Date:$date1";?></p>
+				<p><?php echo $description1;?></p>
 			</div>
 		</main>
 	</body>
 </html>
+<?php session_destroy();?>

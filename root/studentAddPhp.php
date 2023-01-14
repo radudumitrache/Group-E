@@ -22,20 +22,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if($stmt->rowCount() >= 1){
 
-            $sql = $conn->prepare("UPDATE exams
-                                    SET notes = :notes
-                                    WHERE exams.examID IN (
-                                        SELECT students_exams.examID
-                                        FROM students_exams
-                                        WHERE studentID IN (
-                                            SELECT students.studentID
-                                            FROM students
-                                            WHERE students.studentID = :studentID
-                                            AND students.classId = :classId))");
-                                            
+            $sql = $conn->prepare("UPDATE students_exams
+                                    SET exam_notes = :notes
+                                    WHERE studentID = :studentID
+                                    AND examID IN (
+                                            SELECT examID
+                                            FROM exams
+                                            WHERE subjectID = :classId)");
+
+            $sql->bindParam('notes', $notes, PDO::PARAM_STR);                               
             $sql->bindParam('studentID', $studentId, PDO::PARAM_STR);
             $sql->bindParam('classId', $classId, PDO::PARAM_STR);
-            $sql->bindParam('notes', $notes, PDO::PARAM_STR);
+            
             $sql->execute();
 
             if(isset($sql)){

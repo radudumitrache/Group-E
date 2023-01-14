@@ -146,11 +146,11 @@ main
 .InfoBox p
 {
   font-family: 'Arial';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 29px;
-padding-top:30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
+  padding-top:30px;
 }
 .InfoBox
 {
@@ -158,6 +158,10 @@ padding-top:30px;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+#eventImg{
+  width: 100px;
+  height: auto;
 }
 .overlay
 {

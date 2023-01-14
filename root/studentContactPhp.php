@@ -66,7 +66,7 @@ global $conn;
 
                     $studentId = filter_input(INPUT_POST, 'studentId', FILTER_SANITIZE_SPECIAL_CHARS);
 
-                    $stmt = $conn->prepare("SELECT users.telephone_number, users.email_address, name
+                    $stmt = $conn->prepare("SELECT users.telephone_number, users.email_address, user_name
                                             FROM users,parents,parents_students 
                                             WHERE users.userID = parents.userID 
                                             AND parents.parentID = parents_students.parentID 

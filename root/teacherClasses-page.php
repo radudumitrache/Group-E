@@ -142,7 +142,7 @@
       
                   if($isConnect){
 
-                          $stmt = $conn->prepare("SELECT students.studentID, classID, name, score, exams.notes
+                          $stmt = $conn->prepare("SELECT students.studentID, classID, student_name, score, exam_notes
                                                   FROM students, students_exams, exams
                                                   WHERE students.studentID = students_exams.studentID
                                                   AND students_exams.examID = exams.examID");
