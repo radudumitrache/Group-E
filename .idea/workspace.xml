@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4bb4ff86-6c18-4f6c-b49c-aecdb0c094f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/root/css/parentMain-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/parentMain-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/css/teacherClasses-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/teacherClasses-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/css/teacherMain-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/teacherMain-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/parentMain-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/parentMain-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/teacherClasses-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/teacherClasses-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/teacherMain-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/teacherMain-page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +31,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -45,8 +48,12 @@
       <option name="presentableId" value="Default" />
       <updated>1670780817742</updated>
       <workItem from="1670780819229" duration="1660000" />
+      <workItem from="1673710887919" duration="715000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
