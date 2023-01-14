@@ -21,8 +21,9 @@
     }
     if (isset($_SESSION["user"]))
     {
-     
-      if ($_SESSION["user"]["password"]==$pass)
+     //since the accounts will be provided by the school and not created by us , We tested the sign in without
+     // a hash but in the real scenario everything will be hashed and secure, the first part of the if not existing
+      if ($_SESSION["user"]["password"]==$pass|| password_verify($pass,$_SESSION["user"]["password"]))
         {
           if ($_SESSION["user"]["role"]=="parent")
             { 
@@ -149,9 +150,9 @@
 
     <h1>Sign in</h1>
     <label for="email">Email</label>
-    <input type="text" id="email" name="email">
+    <input type="text" id="email" name="email" required>
     <label for="password">Password</label>
-    <input type="text" id="password" name="password">
+    <input type="password" id="password" name="password" required>
     <div id="footerInfo">
       <a href="resetPass-page.php">Forgot your password?</a>
       <input type="submit" id="submit" name="submit" value="Sign In">    

@@ -70,7 +70,6 @@
 
           <?php
             try{
-              //$stmt = $dbHandler -> prepare("SELECT events_school.photo, events_school.date, events_school.description FROM events_school ORDER BY eventID DESC LIMIT 0,1");
               $stmt = $conn -> prepare("SELECT events_school.photo, events_school.event_date, events_school.event_description 
                                         FROM events_school 
                                         WHERE eventID = 1

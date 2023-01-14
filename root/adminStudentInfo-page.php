@@ -1,5 +1,5 @@
 <?php
-    include("databaseConnect.php");
+    include("connection.php");
     if (isset($_GET["id"]))
     {
         
@@ -13,7 +13,7 @@
         $stmt=null;
         try
         {
-            $stmt=$dbhandler->prepare($sql);
+            $stmt=$conn->prepare($sql);
             $stmt->bindParam(":id",$id,PDO::PARAM_INT);
             $stmt->execute();
         }
@@ -79,9 +79,9 @@
     <main>
 
       <div id="mainContent">
-        <div class="button1" href="home-page.php"><button>Profile</button></div>
+        <div class="button1" > <a href="adminMain-page.php"><button>Main Page</button></a></div>
         <h1 class="textSettings">Admin</h1>
-        <div class="button1" href=""><button>Student works</button></div>
+        <div class="button1" ><a href="adminTeacherInfoPage.php"><button>Student Info Page</button></a></div>
       </div>
 
       <div class="MainBox">
@@ -100,7 +100,7 @@
                 $stmt=null;
                 try
                 {
-                    $stmt=$dbhandler->prepare($sql);
+                    $stmt=$conn->prepare($sql);
                     $stmt->execute();
                     
                 }

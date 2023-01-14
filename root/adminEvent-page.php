@@ -11,7 +11,7 @@
           echo "<br>";
         }
       }
-
+      //In order for the home page to receive the events all of the three activities have to be defined
       if (empty($err) AND $_SERVER["REQUEST_METHOD"] == "POST") {
         try{
           $eventName = filter_input(INPUT_POST, "eventName", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -21,7 +21,6 @@
           // rename filename 
           $types = explode("/", $_FILES["eventImage"]["type"]);
           $eventImage = md5(uniqid()) . "." . $types[1];
-          //$eventImage = $_FILES["eventImage"]["name"];
           
           // move file to folder
           $folder = "./uploade/" . $eventImage;
@@ -29,8 +28,7 @@
           
           // if move file success, insert data to database
           if ($rs) {
-            //$stmt = $dbHandler -> prepare("INSERT INTO events_school (name, photo, events_school.description, events_school.date) VALUES (:eventName, :eventImage, :eventDescribe, :eventDate)");
-            $stmt = $conn -> prepare("INSERT INTO events_school (event_name, event_photo, events_school.event_description, events_school.event_date) VALUES (:eventName, :eventImage, :eventDescribe, :eventDate)");
+            $stmt = $conn -> prepare("INSERT INTO events_school (event_name, photo, events_school.event_description, events_school.event_date) VALUES (:eventName, :eventImage, :eventDescribe, :eventDate)");
 
             $stmt->bindParam(":eventName", $eventName, PDO::PARAM_STR);
             $stmt->bindParam(":eventImage", $eventImage, PDO::PARAM_STR);

@@ -48,13 +48,13 @@
       </div>
     </a>
 
-    <a href="" class="event-parentButton">
+    <a href="admin_event_parent.php" class="event-parentButton">
       <div>
         Event-Parent
       </div>
     </a>
 
-    <a href="" class="tableButton">
+    <a href="adminStudentInfo-page.php" class="tableButton">
       <div>
         Tables
       </div>

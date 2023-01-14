@@ -76,9 +76,9 @@
     <main>
 
       <div id="mainContent">
-        <div class="button1" href="home-page.php"><button>Profile</button></div>
+        <div class="button1" ><a href="home-page.php"><button>Main Page</button></a></div>
         <h1 class="textSettings">Admin</h1>
-        <div class="button1" href=""><button>Student works</button></div>
+        <div class="button1"><a href="adminStudentInfo-page.php"><button>Student works</button></a></div>
       </div>
 
       <div class="MainBox">
@@ -92,7 +92,7 @@
               <th class="LeftTds">Remove</th>
             </tr>
            <?php
-                $sql="SELECT teachers.teacherID,user_name,classID,telephone_number,users.email_address FROM teachers,users,classes WHERE teachers.userID=users.userID AND teachers.teacherID=classes.teacherID";
+                $sql="SELECT teachers.teacherID,user_name,classID,telephone_number,users.email_address FROM teachers,users,classes WHERE teachers.userID=users.userID AND teachers.teacherID=classes.teacherID GROUP BY teachers.teacherID";
                 $stmt=null;
                 try
                 {

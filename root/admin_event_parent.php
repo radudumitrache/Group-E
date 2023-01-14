@@ -1,6 +1,5 @@
 <?php
-    include ("dblink.php");
-
+    
     $err = [];
 
     if(isset($_POST['submitPic1'])){
