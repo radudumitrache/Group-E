@@ -23,6 +23,8 @@ header{
 }
 .logo{
   padding: 0 0 0 20px;
+  width: 220px;
+	height:auto;
   grid-column: 2/3;
 }
 
@@ -77,4 +79,101 @@ header{
   background-color: #C5EAFF;
   color: #000000;
   border: black 1px solid;
+}
+
+main
+{
+  grid-column: 1/13;
+}
+#imageBanner
+{
+  
+  margin:auto;
+  margin-top: 1%;
+  width: 98%;
+  border-radius: 10px;
+  background-image: url("../img/homePage/MorgensterNaambord1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 145px 968px 42.46px 84px;
+
+}
+#textBox
+{
+  background-color: rgba(91, 154, 189, 0.58);
+  width: 343px;
+  height: 354px;
+  content: ""; 
+  border-radius: 15px;
+  padding: 49px 39px 38px 39px;
+  
+}
+
+#textBox > p
+{
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 127.99%;
+  color:white;
+}
+#InfoBanner
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+#InfoBanner a
+{
+  width:355px;
+  height: 263px;
+  background: #198DCE;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Arial', serif;
+  font-size: 15px;
+}
+.InfoBox p
+{
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
+  padding-top:30px;
+}
+.InfoBox
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#eventImg{
+  width: 100px;
+  height: auto;
+}
+.overlay
+{
+  display:none;
+}
+#InfoBanner a:hover{
+  background: rgba(39, 82, 100, 1);
+  backdrop-filter: blur(5px);
+}
+#InfoBanner a:hover .InfoBox{
+  display: none;
+}
+#InfoBanner a:hover .overlay{
+  display: block;
 }

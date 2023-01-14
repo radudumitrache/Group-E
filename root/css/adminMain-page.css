@@ -1,0 +1,122 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-image: url("../img/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header{
+  grid-column: 1/13;
+  width: 100%;
+  background-color: #AAE0FF;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.logo{
+  padding: 0 0 0 20px;
+  grid-column: 2/3;
+}
+
+.listcontainer{
+  grid-column: 11/12;
+  width: 100%;
+  padding: 0 20px 0 0;
+}
+
+.headerList{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+.button1{
+  background-color: #FDDF42;
+  border-radius: 15px;
+  width: 150px;
+  height: 60px;
+}
+.button1 button{
+  background-color: #FDDF42;
+  border-radius: 15px;
+  border: none;
+  width: 150px;
+  height: 60px;
+  font-size: 20px;
+  font-family: Arial, serif;
+}
+.button1 :hover{
+  background-color: #705E00;
+  color: #ffffff;
+}
+
+/* Header ends here */
+
+/* Main starts here */
+
+.main{
+  margin: 50px 0 50px 0;
+  padding: 60px 0 60px 0;
+  grid-column: 2/12;
+  width: 100%;
+  background: rgba(39, 82, 100, 0.6);
+  backdrop-filter: blur(7.5px);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 60px;
+  column-gap: 60px;
+  justify-content: center;
+}
+.event-mainButton{
+  background: #198DCE;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 90%;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Arial', serif;
+  color: #ffffff;
+  font-size: 45px;
+
+}
+.event-parentButton{
+  background: #198DCE;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  height: 260px;
+  width: 42.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Arial', serif;
+  color: #ffffff;
+  font-size: 45px;
+}
+.tableButton{
+  background: #198DCE;
+  box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  height: 260px;
+  width: 42.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Arial', serif;
+  color: #ffffff;
+  font-size: 45px;
+}
+

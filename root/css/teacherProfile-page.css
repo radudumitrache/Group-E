@@ -4,30 +4,30 @@
 }
 
 body{
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
   background-image: url("../img/background.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-header{
-  grid-column: 1/13;
-  width: 100%;
-  background-color: #AAE0FF;
+#container{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  align-items: center;
+}
+
+header{
+  grid-column: 1/13;
+  display: flex;
+  width: 100%;
   justify-content: space-between;
+  align-items: center;
+  background-color: #AAE0FF;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .logo{
   padding: 0 0 0 20px;
-  grid-column: 2/3;
+  padding-left: 100px;
 }
-.listcontainer{
-  grid-column: 11/12;
-  width: 100%;
+.listContainer{
   padding: 0 20px 0 0;
 }
 .headerList{
@@ -54,4 +54,44 @@ header{
 .button1 :hover{
   background-color: #705E00;
   color: #ffffff;
+}
+
+main{
+  color: white;
+  grid-column: 3/11;
+  background-color: rgba(39, 82, 100, 0.6);
+  backdrop-filter: blur(7.5px);
+  height: 650px;
+  margin: 50px;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#mainContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.image{
+  max-width:150px;
+  width:150px;
+  width:expression(document.body.clientWidth>150?”150px”:”auto”);
+  overflow:hidden;
+}
+
+.textSettings{
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+}
+
+main > div > a{
+  color: white;
+  text-decoration-style: dashed;
 }

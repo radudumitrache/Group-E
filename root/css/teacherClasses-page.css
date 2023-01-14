@@ -57,3 +57,202 @@ header{
   background-color: #705E00;
   color: #ffffff;
 }
+
+/*Header ends here*/
+
+/*Main starts here*/
+
+.main{
+  margin: 50px 0 50px 0;
+  padding: 60px 0 60px 0;
+  grid-column: 2/12;
+  width: 100%;
+  background: rgba(39, 82, 100, 0.6);
+  backdrop-filter: blur(7.5px);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 60px;
+  column-gap: 60px;
+  justify-content: center;
+}
+.mainHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+.mainHeader h1{
+  color: #ffffff;
+  font-family: 'Arial', serif;
+  font-size: 45px;
+}
+#btclass{
+  display: flex; 
+  flex-direction:column;
+  justify-content: space-between;
+  height: 150px
+}
+.button3{
+  background-color: #FDDF42;
+  border-radius: 15px;
+  width: 150px;
+  height: 60px;
+}
+.button3 button{
+  background-color: #FDDF42;
+  border-radius: 15px;
+  border: none;
+  width: 150px;
+  height: 60px;
+  font-size: 20px;
+  font-family: Arial, serif;
+}
+.button3 :hover{
+  background-color: #705E00;
+  color: #ffffff;
+}
+.forms{
+  width: 90%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+.forms label{
+  font-size: 20px;
+  font-family: Arial, serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form1{
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form2{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form3{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.studentId{
+  width: 100px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+.notes{
+  width: 300px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+.submits{
+  background-color: #FDDF42;
+  border-radius: 15px;
+  border: none;
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  font-family: Arial, serif;
+}
+.mainTable{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table{
+  background: rgba(39, 82, 100, 0.5);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  border-collapse:collapse;
+  width: 90%;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Arial', serif;
+  font-size: 25px;
+}
+.table th{
+  border-right:1px solid black;
+  border-top: none;
+  height: 100px;
+}
+.table :last-child{
+  border-right: none;
+}
+.table td{
+  border:1px solid black;
+  border-left: none;
+  border-bottom: none;
+  height: 100px;
+}
+
+/*Buttons*/
+
+.buttonContact{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  padding-top: 80px;
+  margin-left: 20px;
+}
+
+.buttonContact button{
+  width: 104px;
+  height: 40px;
+  border: none;
+
+  background: rgba(39, 82, 100, 0.5);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  margin-top: 20px;
+}
+.buttonContact button a{
+  text-decoration: none;
+  color: #ffffff;
+}
+.buttonAbsences {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  padding-top: 80px;
+  margin-left: 20px;
+}
+.buttonAbsences button{
+  width: 104px;
+  height: 40px;
+  border: none;
+  color: #ffffff;
+  background: rgba(39, 82, 100, 0.5);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  margin-top: 20px;
+}
+.buttonAbsences button a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+
+
+
